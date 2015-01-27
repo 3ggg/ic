@@ -1,0 +1,88 @@
+<script src="jquery.js"></script>
+<script src="jquery-pack.js"></script>
+  
+<SCRIPT language="javascript" type="text/javascript">
+	<!--
+	function toggle(id){
+	 var d=document.top.getElementById(id);
+
+	 if (d.style.display == 'block'){d.style.display='none';}
+	 else{d.style.display='block';}
+
+	return false;
+	}
+	//-->
+</SCRIPT>
+
+<!-- <script>
+$('#zo').live('click',function(){
+   $('#zo').fadeOut();
+});
+</script>
+ -->
+<script>
+ // Удаление элемента
+function Destroy_Element(obj) {
+    var id = obj.id;
+    obj.parentNode.removeChild(obj);
+
+//    try {
+//        top.BackGroundWall(id, 'remove');
+//    }
+//    catch (e) {
+//    }
+}
+</script>
+
+<!-- <div style="cursor:pointer; font-family:Arial;" onclick="top.ifzoo.zoo.style.display='none';"><b>X</b></div>
+ -->
+<!--  <div style="cursor:pointer; font-family:Arial;" onclick="document.top.zo.ifzoo.style.display='none';"><b>X</b></div>
+ -->
+<!-- <div style="cursor:pointer; font-family:Arial;" onclick="top.zo.getElementById('ifzoo').style.display='none';"><b>X</b></div>
+ --><div id="zoo" name="zoo" style="dispay:block; margin-right:50px;">
+  <table width="100%" border="0">
+    <tr>
+      <td align="left">&nbsp;</td>
+      <td align="center"><strong>Зоотовары</strong></td>
+      <td align="left">&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="20%" valign="top">&nbsp;</td>
+      <td width="34%" height="115" valign="top"><div id="odezh" style="background-color:#FFDDF9;border:dotted #F451E8 "><table> <tr>
+        <td>Собаки 
+          <input type="checkbox" name="checkbox" id="checkbox">
+          <label for="checkbox"></label>
+          Кошки
+          <input type="checkbox" name="checkbox2" id="checkbox2">
+          Грызуны
+          <input type="checkbox" name="checkbox3" id="checkbox3">
+          Птицы
+          <input type="checkbox" name="checkbox52" id="checkbox54" />
+          Рыбки
+          <input type="checkbox" name="checkbox53" id="checkbox55" />
+          Рептилии
+          <input type="checkbox" name="checkbox4" id="checkbox4" /></td>
+        </tr>
+        <tr><td>&nbsp; </td></tr>
+        <tr>
+          <td valign="top" >Средства по уходу&nbsp;
+            <input type="checkbox" name="checkbox5" id="checkbox7">
+            Домики 
+            <input type="checkbox" name="checkbox6" id="checkbox8"> 
+            Лежанки 
+            <input type="checkbox" name="checkbox7" id="checkbox9">
+            Клетки 
+            <input type="checkbox" name="checkbox8" id="checkbox10" />
+            Посуда
+            <input type="checkbox" name="checkbox9" id="checkbox11" />
+            Переноски
+            <input type="checkbox" name="checkbox14" id="checkbox16" />
+            Корма
+            <input type="checkbox" name="checkbox15" id="checkbox17" />
+            Игрушки
+            <input type="checkbox" name="checkbox10" id="checkbox5" />            <br></td></tr>
+      </table></div></td>
+      <td width="46%" valign="top">&nbsp;</td>
+    </tr>
+  </table>
+</div>

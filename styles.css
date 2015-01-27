@@ -1,0 +1,446 @@
+#town3 {
+	width: 95%;
+	background-color: white;
+	font-size: 14px;
+	max-height: 100%;
+}
+#town4 {
+	width: 95%;
+	background-color: white;
+	font-size: 14px;
+	max-height: 100%;
+}
+#isk2 {
+	width: 100%;
+	background-color: #EFEFEF;
+	font-size: 18px;
+	text-align: left;
+	height: 40px;
+}
+.nov1 {width:97px;	
+/*background-color: #07B8E4;	*/
+height:30px;	
+/*color:#0080FF;*/
+color:black;
+
+font-size:14px;
+ -moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+ -webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+ -khtml-border-radius:5px; /* закругл. для браузера Konquerer системы Linux */
+ border-radius: 5px; /* закругление углов для всех, кто понимает */
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0A5B7A', endColorstr='#ffffff');
+background: -moz-linear-gradient(top, #e2e2e2 0%, #dbdbdb 50%, #d1d1d1 51%, #fefefe 100%);
+    background: -webkit-linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+    background: -o-linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+    background: -ms-linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+    background: linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+}
+.nov1 {
+	width: 25%;
+	background-color: #07B8E4;
+	height: 100%;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov11 {width:97px;	
+/*background-color: #07B8E4;	*/
+height:30px;	
+/*color:#0080FF;*/
+color:black;
+
+font-size:14px;
+ -moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+ -webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+ -khtml-border-radius:5px; /* закругл. для браузера Konquerer системы Linux */
+ border-radius: 5px; /* закругление углов для всех, кто понимает */
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0A5B7A', endColorstr='#ffffff');
+background: -moz-linear-gradient(top, #e2e2e2 0%, #dbdbdb 50%, #d1d1d1 51%, #fefefe 100%);
+    background: -webkit-linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+    background: -o-linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+    background: -ms-linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+    background: linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+}
+.nov11 {
+	width: 25%;
+	background-color: #07B8E4;
+	height: 100%;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+
+.nov12 {
+	width: 27%;
+	background-color: #d1d1d1;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov13 {width:97px;	
+/*background-color: #07B8E4;	*/
+height:30px;	
+/*color:#0080FF;*/
+color:black;
+
+font-size:14px;
+ -moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+ -webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+ -khtml-border-radius:5px; /* закругл. для браузера Konquerer системы Linux */
+ border-radius: 5px; /* закругление углов для всех, кто понимает */
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0A5B7A', endColorstr='#ffffff');
+background: -moz-linear-gradient(top, #e2e2e2 0%, #dbdbdb 50%, #d1d1d1 51%, #fefefe 100%);
+    background: -webkit-linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+    background: -o-linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+    background: -ms-linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+    background: linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+}
+.nov13 {
+	width: 20%;
+	background-color: #07B8E4;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov111 {
+	width: 40%;
+	background-color: #07B8E4;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov2 {
+	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov21 {
+	width: 92%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov22 {
+	width: 92%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov23 {
+	width: 92%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov3 {
+	width: 48.2%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov31 {width:152px;	
+background-color:#07B8E4;	
+height:40px;
+/*color:#0080FF;*/
+
+color:black;
+font-size:14px;
+
+ -moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+ -webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+ -khtml-border-radius:5px; /* закругл. для браузера Konquerer системы Linux */
+ border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov210 {width:170px;	
+background-color: #DF0070;;	
+font-weight:bold;
+height:80px;	
+/*color:#0080FF;*/
+color:white;
+font-size:14px;
+ -moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+ -webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+ -khtml-border-radius:5px; /* закругл. для браузера Konquerer системы Linux */
+ border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov2101 {
+	width: 49%;
+	background-color:#07B8E4;;
+	font-weight: bold;
+	height: 80px;
+	/*color:#0080FF;*/
+	color: white;
+	font-size:24px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov2102 {width:170px;	
+background-color: #DF0070;;	
+font-weight:bold;
+height:80px;	
+/*color:#0080FF;*/
+color:white;
+font-size:14px;
+ -moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+ -webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+ -khtml-border-radius:5px; /* закругл. для браузера Konquerer системы Linux */
+ border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov1111 {	width: 40%;
+	background-color: #07B8E4;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov121 {	width: 25%;
+	background-color: #d1d1d1;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov21011 {	width: 49%;
+	background-color:#07B8E4;;
+	font-weight: bold;
+	height: 80px;
+	/*color:#0080FF;*/
+	color: white;
+	font-size:28px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov1112 {	width: 40%;
+	background-color: #07B8E4;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov122 {	width: 25%;
+	background-color: #d1d1d1;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov1113 {	width: 40%;
+	background-color: #07B8E4;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov123 {	width: 27%;
+	background-color: #d1d1d1;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov1114 {	width: 40%;
+	background-color: #07B8E4;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov124 {	width: 27%;
+	background-color: #d1d1d1;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov24 {	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov25 {	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov32 {	width: 48%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov26 {	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov27 {	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov21012 {	width: 49%;
+	background-color:#07B8E4;;
+	font-weight: bold;
+	height: 80px;
+	/*color:#0080FF;*/
+	color: white;
+	font-size:28px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov241 {width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov1115 {	width: 40%;
+	background-color: #07B8E4;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov125 {	width: 27%;
+	background-color: #d1d1d1;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}

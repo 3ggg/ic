@@ -1,0 +1,243 @@
+﻿<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+ <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+ <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Единая торговая площадка ИнтерЦУМ</title>
+<link href="boilerplate.css" rel="stylesheet" type="text/css">
+<link href="inter.css" rel="stylesheet" type="text/css">
+<link href="cite.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="themes.css"/>
+    <script type="text/javascript" src="colorpicker.min.js"></script>
+<style type="text/css">
+
+
+</style>
+<!-- 
+Дополнительные сведения об условных комментариях вокруг HTML-тегов в верхней части файла:
+paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
+
+Выполните следующие действия, если вы используете модифицированную сборку modernizr (http://www.modernizr.com/):
+* вставьте здесь ссылку на свой javascript;
+* удалите ссылку ниже на html5shiv;
+* добавьте класс no-js в HTML-теги в верхней части;
+* вы также можете удалить ссылку на respond.min.js, если MQ Polyfill входит в сборку modernizr. 
+-->
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="respond.min.js"></script>
+
+
+	<!-- Add jQuery library -->
+	<script type="text/javascript" src="jquery.js"></script>
+
+	
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+
+
+
+
+
+
+
+
+$("#button1").live('click', function(){
+
+ $.ajax({   
+                    type: "POST",   
+                    url: "answer_fiz.php",   
+                    data: "user_name="+$("#naimen4").val()+"&pwd1="+$("#pass2").val()+"&pwd2="+$("#pass4").val()+"&name_user="+$("#naimen").val()+"&city="+$("#forma_sobst2").val()+"&el_p="+$("#naimen2").val()+"&tel="+$("#naimen3").val(), 
+                    data_type:"text",  
+                    success: function(text){   
+                      
+alert(text);
+
+                    }   
+                });   
+
+
+});
+
+
+
+			
+
+
+
+
+
+		});
+	</script>
+
+ 
+</head>
+<body>
+<div class="gridContainer clearfix" >
+  <div id="LayoutDiv1" style="border: 1px solid 
+	#07B8E4;" >
+    <div id="header1" align="center" border="1" >
+      <blockquote>
+        <p><br>
+        </p>
+      </blockquote>
+      <table width="98%" height="93" border="0">
+        <tr>
+          <td width="16%" height="89" align="right">&nbsp;</td>
+          <td width="17%" align="center"><a href="index.html" style="border:0px;"><img src="лог_лог_111.png" alt="логотип"></a></td>
+          <td width="40%" align="center"><div style="font-size: 10px; color: #DF0070; letter-spacing: 5px;" align="center"> ЕДИНАЯ ТОРГОВАЯ ПЛОЩАДКА</div>
+          <div align="center" style="font-size: 50px; color:#07B8E4;"><b>ИнтерЦУМ</b></div></td>
+          <td width="27%" valign="bottom"><table width="98%"  border="0">
+            <tr>
+              <td height="20" colspan="2" align="right">&nbsp;</td>
+            </tr>
+            <tr>
+              <td height="19" align="right" style="font-size: 12px; color:#07B8E4;">тел.:</td>
+              <td align="left" style="font-size: 12px; color:#07B8E4;"><b>8(3519)47-40-17<b></td>
+            </tr>
+            <tr>
+              <td height="19" align="right" style="font-size: 12px; color:#07B8E4;">e-mail:</td>
+              <td align="left" style="font-size: 12px; color:#07B8E4;"><a href="mailto:intecum@mail.ru" style="font-size: 12px; color:#07B8E4;letter-spacing: 1px;"> <b>intercum@mail.ru</b></a></td>
+            </tr>
+          </table>
+         </td>
+        </tr>
+      </table>
+    </div>
+    
+    <div id="rec1" align="center">
+    <hr>
+      <table width="98%" height="502" border="0">
+        <tr>
+          <td height="32" colspan="4" align="center" valign="top" style="font-size: 20px; color:#07B8E4;" >&nbsp;</td>
+        </tr>
+        <tr>
+          <td height="32" colspan="4" align="center" valign="top" style="font-size: 20px; color:#07B8E4;" >Создание сайта для физического лица с добавлением товара</td>
+        </tr>
+        <tr>
+          <td width="18%" height="28" align="center" valign="top"  >Ваше имя</td>
+          <td width="32%" align="center" valign="top" style="font-size: 18px; color:#07B8E4;" ><input type="text" name="naimen" id="naimen" class="vv_inf" maxlength="255" /></td>
+          <td colspan="2" align="center" valign="top" style="font-size: 10px; color:#07B8E4;" >Выбрать категорию</td>
+        </tr>
+        <tr>
+          <td align="center" valign="bottom">Электронный адрес</td>
+          <td align="center" valign="bottom"><font style="color: #DF0070;"><span style="font-size: 18px; color:#07B8E4;">
+            <input type="text" name="naimen2" id="naimen2" class="vv_inf" maxlength="255" />
+          </span></font></td>
+          <td align="center" valign="bottom">&nbsp;</td>
+          <td align="center" valign="bottom">&nbsp;</td>
+        </tr>
+        <tr>
+          <td align="center" valign="bottom">Номер телефона</td>
+          <td align="center" valign="bottom"><font style="color: #DF0070;"><span style="font-size: 18px; color:#07B8E4;">
+            <input type="text" name="naimen3" id="naimen3" class="vv_inf" maxlength="255" />
+          </span></font></td>
+          <td width="36%" rowspan="5" align="center" valign="bottom"><table width="88%" border="0" cellpadding=4 cellspacing=4>
+            <tr>
+              <td width="50%" align="right"><img src="ap1.jpg" alt="карт1" width="100" height="97"></td>
+              <td width="50%" align="left"><img src="ap1.jpg" alt="карт1" width="100" height="97"></td>
+            </tr>
+            <tr>
+              <td align="right"><img src="ap1.jpg" alt="карт1" width="100" height="97"></td>
+              <td align="left"><img src="ap1.jpg" alt="карт1" width="100" height="97"></td>
+            </tr>
+          </table></td>
+          <td width="14%" align="center" valign="bottom"><input type="button" value="Помощь" class="nov2" onclick="window.open('help.html', '', 'Toolbar=1, Location=0, Directories=0, Status=0, Menubar=0, Scrollbars=0, Resizable=0, Width=600, Height=500');" /></td>
+        </tr>
+        <tr>
+          <td align="center" valign="bottom">Город</td>
+          <td align="center" valign="bottom"><select name="forma_sobst2" id="forma_sobst2" class="vv_inf1">
+            <option>Выбрать...</option>
+            <option value="Магнитогорск">Магнитогорск</option>
+            <option></option>
+            <option></option>
+          </select></td>
+          <td align="center" valign="bottom"><input type="button" value="Выкупл. товар" class="nov2" /></td>
+        </tr>
+        <tr>
+          <td align="center" valign="bottom">Логин</td>
+          <td align="center" valign="bottom"><font style="color: #DF0070;"><span style="font-size: 18px; color:#07B8E4;">
+            <input type="text" name="naimen4" id="naimen4" class="vv_inf" maxlength="255" />
+          </span></font></td>
+          <td align="center" valign="bottom"><input type="button" class="nov2" value="еще 1 кнопка" /></td>
+        </tr>
+        <tr>
+          <td align="center" valign="bottom">Пароль</td>
+          <td align="center" valign="bottom"><input type="password" name="pass2" id="pass2" class="vv_inf" maxlength="10" /></td>
+          <td align="center" valign="bottom"><input type="button" class="nov2" value="еще 1 кнопка" /></td>
+        </tr>
+        <tr>
+          <td height="42" align="center" valign="bottom">Пароль(повторить)</td>
+          <td align="center" valign="bottom"><input type="password" name="pass4" id="pass4" class="vv_inf" maxlength="10" /></td>
+          <td align="center" valign="bottom"><input type="button" class="nov2" value="еще 1 кнопка" /></td>
+        </tr>
+        <tr>
+          <td height="33" align="center" valign="bottom">Текст с картинки</td>
+          <td align="center" valign="bottom"><input type="text" name="text_k2" id="text_k2" class="vv_inf" maxlength="6" /></td>
+          <td align="center" valign="bottom">&nbsp;</td>
+          <td align="center" valign="bottom">&nbsp;</td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center" valign="bottom"><a class="fancybox fancybox.iframe" href="rezerv_money_cond.html">Условия резервации денег</a></td>
+          <td colspan="2" rowspan="3" align="center" valign="bottom">
+		  <form name="form2" method="post" action="">
+            <label for="textarea"></label>
+            <textarea name="textarea" rows="5" id="textarea" style="width:100%;" value="Описание товара" onblur="if(this.value=='') this.value='Описание товара';" onfocus="if(this.value=='Описание товара') this.value='';">Описание товара</textarea>
+          </form></td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center" valign="bottom"><a class="fancybox fancybox.iframe" href="reg_cond_fiz.html">Условия сайта</a> <input type="checkbox" name="checkbox" id="checkbox" checked>
+              <label for="checkbox"></label>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center" valign="bottom"><form name="form1" method="post" action="">
+          </form></td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center" valign="bottom"><input type="button" name="button1" id="button1" value="Создать"></td>
+          <td colspan="2" align="center" valign="bottom"><input type="submit" name="button2" id="button2" value="Добавить"></td>
+        </tr>
+      </table>
+      <hr>
+    </div>
+    
+        <div id="osn">
+          <blockquote>
+            <form enctype="multipart/form-data">
+            </form>
+            
+          </blockquote>
+    </div>
+    
+          <div id="rec2"> 
+            <div id="rec3">
+              <table width="100%" height="189" border="0">
+                <tr>
+                  <td width="25%" align="center" valign="middle"><img src="i.jpg" alt="1"></td>
+                  <td width="25%" align="center"><img src="i.jpg" alt="1"></td>
+                  <td width="25%" align="center"><img src="i.jpg" alt="1"></td>
+                  <td width="25%" align="center"><img src="i.jpg" alt="1"></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div id="foot1" align=center style="background-color:#07B8E4" >
+            <blockquote>
+              <p>&copy; ИнтерЦУМ</p>
+            </blockquote>
+          </div>
+</div>
+</div>
+</body>
+</html>

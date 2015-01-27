@@ -1,0 +1,30 @@
+﻿<script>
+	function summ(){
+		//var a=getElementById('prop');
+		var i;
+		var total_sum;
+		for (i=1;i<=5;i++){
+		if(top.document.prop[i].checked==true){
+											//for(i=0;i++;sizeof(prop));
+											total_sum=total_sum+top.document.prop[i].value;
+											//alert(total_sum);
+										}
+								}
+		alert(total_sum);
+		top.document.summ.value=total_sum;
+	}
+</script>
+
+<form name="f1" id="f1" action="form3.html" method="post">
+
+<input type="checkbox" id="prop1" name="prop[1]" value="100" />100<br />
+<input type="checkbox" id="prop2" name="prop[2]" value="200" />200<br />
+<input type="checkbox" id="prop3" name="prop[3]" value="300" />300<br />
+<input type="checkbox" id="prop4" name="prop[4]" value="400" />400<br />
+<input type="checkbox" id="prop5" name="prop[5]" value="500" />500<br /><br />
+
+<input type="button" value="Проверить" onclick="summ();" /><br /><br />
+
+<input type="text" id="summ" name="summ" value="" /><br />
+
+</form>

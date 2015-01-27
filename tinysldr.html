@@ -1,0 +1,81 @@
+﻿<!doctype html>
+<html>
+<head>
+<link href="tinysldr.css" rel="stylesheet" type="text/css">
+<script src="tinysldr.js"></script>
+
+<script src="jquery.js"></script>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src="http://jquery-ui.googlecode.com/svn/tags/latest/ui/jquery.effects.core.js"></script>
+	<script src="http://jquery-ui.googlecode.com/svn/tags/latest/ui/jquery.effects.slide.js"></script>
+</head>
+<body>
+	<div id="container"> 
+        <div class="sliderbutton" id="slideleft" onclick="slideshow.move(-1)"></div> 
+        <div id="slider"> 
+            <ul> 
+                <li><img src="lancer.jpg" width="250" height="155" alt="Image One" /></li> 
+                <li><img src="lancer.jpg" width="250" height="155" alt="Image Two" /></li> 
+                <li><img src="lancer.jpg" width="250" height="155" alt="Image Three" /></li> 
+                <li><img src="lancer.jpg" width="250" height="155" alt="Image Four" /></li> 
+            </ul> 
+        </div> 
+        <div class="sliderbutton" id="slideright" onclick="slideshow.move(1)"></div> 
+        <ul id="pagination" class="pagination"> 
+            <li onclick="slideshow.pos(0)"></li> 
+            <li onclick="slideshow.pos(1)"></li> 
+            <li onclick="slideshow.pos(2)"></li> 
+            <li onclick="slideshow.pos(3)"></li> 
+        </ul> 
+    </div> 
+    <div id="container2"> 
+        <div class="sliderbutton" id="slideleft2" onclick="slideshow2.move(-1)"></div> 
+        <div id="slider2"> 
+            <ul> 
+                <li><img src="lancer.jpg" width="250" height="155" alt="Image One" /></li> 
+                <li><img src="lancer.jpg" width="250" height="155" alt="Image Two" /></li> 
+                <li><img src="lancer.jpg" width="250" height="155" alt="Image Three" /></li> 
+                <li><img src="lancer.jpg" width="250" height="155" alt="Image Four" /></li> 
+            </ul> 
+        </div> 
+        <div class="sliderbutton2" id="slideright2" onclick="slideshow2.move(1)"></div> 
+        <ul id="pagination2" class="pagination"> 
+            <li onclick="slideshow2.pos(0)"></li> 
+            <li onclick="slideshow2.pos(1)"></li> 
+            <li onclick="slideshow2.pos(2)"></li> 
+            <li onclick="slideshow2.pos(3)"></li> 
+        </ul> 
+    </div> 
+</div> 
+<script type="text/javascript"> 
+var slideshow=new TINY.slider.slide('slideshow',{ 
+    id:'slider', 
+    auto:3, 
+    resume:true, 
+    vertical:false, 
+    navid:'pagination', 
+    activeclass:'current', 
+    position:0, 
+    rewind:false, 
+    elastic:false, 
+    left:'slideright', 
+    //right:'slideleft' 
+}); 
+</script> 
+<script type="text/javascript"> 
+var slideshow2=new TINY.slider.slide('slideshow2',{ 
+    id:'slider2', 
+    auto:4, 
+    resume:true, 
+    vertical:false, 
+    navid:'pagination2', 
+    activeclass:'current2', 
+    position:0, 
+    rewind:false, 
+    elastic:false, 
+    left:'slideright2', 
+    //right:'slideleft2' 
+}); 
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+.mycont{
+	margin:0 auto;
+	overflow:hidden;
+}
+
+.mycarousel li{
+	width:200px;
+	margin:0 10px;
+}
+
+.jcarousel-clip{
+	overflow: hidden;
+}
+
+.jcarousel-prev,
+.jcarousel-next{
+	display:block;
+	width:32px;
+	height:30px;
+	cursor:pointer;
+}
+
+.jcarousel-prev{
+	background:url('../images/prev-horizontal.png') no-repeat 0 0;
+	float:left;
+}
+
+.jcarousel-next{
+	background:url('../images/next-horizontal.png') no-repeat 0 0;
+	float:right;
+}
+
+.jcarousel-prev:hover,
+.jcarousel-next:hover,
+.jcarousel-prev-disabled,
+.jcarousel-next-disabled{
+	background-position:100% 0;
+}

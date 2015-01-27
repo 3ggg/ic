@@ -1,0 +1,1327 @@
+﻿<?php require_once 'db.php'; ?>
+
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+ <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+ <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Единая торговая площадка ИнтерЦУМ</title>
+<link href="boilerplate.css" rel="stylesheet" type="text/css">
+<link href="inter.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="themes.css"/>
+    <script type="text/javascript" src="colorpicker.min.js"></script>
+<style type="text/css">
+
+.vv_inf{
+	
+	width: 92%;
+	
+}
+
+
+#town3 {
+	width: 95%;
+	background-color: white;
+	font-size: 14px;
+	max-height: 100%;
+}
+#town4 {
+	width: 95%;	
+	background-color: white;
+	font-size: 14px;
+	max-height: 100%;
+}
+#isk2 {
+	width: 100%;
+	background-color: #EFEFEF;
+	font-size: 18px;
+	text-align: left;
+	height: 40px;
+}
+.nov1 {width:97px;	
+/*background-color: #07B8E4;	*/
+height:30px;	
+/*color:#0080FF;*/
+color:black;
+
+font-size:14px;
+ -moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+ -webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+ -khtml-border-radius:5px; /* закругл. для браузера Konquerer системы Linux */
+ border-radius: 5px; /* закругление углов для всех, кто понимает */
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0A5B7A', endColorstr='#ffffff');
+background: -moz-linear-gradient(top, #e2e2e2 0%, #dbdbdb 50%, #d1d1d1 51%, #fefefe 100%);
+    background: -webkit-linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+    background: -o-linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+    background: -ms-linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+    background: linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+}
+.nov1 {
+	width: 25%;
+	background-color: #07B8E4;
+	height: 100%;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov11 {width:97px;	
+/*background-color: #07B8E4;	*/
+height:30px;	
+/*color:#0080FF;*/
+color:black;
+
+font-size:14px;
+ -moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+ -webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+ -khtml-border-radius:5px; /* закругл. для браузера Konquerer системы Linux */
+ border-radius: 5px; /* закругление углов для всех, кто понимает */
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0A5B7A', endColorstr='#ffffff');
+background: -moz-linear-gradient(top, #e2e2e2 0%, #dbdbdb 50%, #d1d1d1 51%, #fefefe 100%);
+    background: -webkit-linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+    background: -o-linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+    background: -ms-linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+    background: linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+}
+.nov11 {
+	width: 25%;
+	background-color: #07B8E4;
+	height: 100%;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+
+.nov12 {
+	width: 27%;
+	background-color: #d1d1d1;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov13 {width:97px;	
+/*background-color: #07B8E4;	*/
+height:30px;	
+/*color:#0080FF;*/
+color:black;
+
+font-size:14px;
+ -moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+ -webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+ -khtml-border-radius:5px; /* закругл. для браузера Konquerer системы Linux */
+ border-radius: 5px; /* закругление углов для всех, кто понимает */
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0A5B7A', endColorstr='#ffffff');
+background: -moz-linear-gradient(top, #e2e2e2 0%, #dbdbdb 50%, #d1d1d1 51%, #fefefe 100%);
+    background: -webkit-linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+    background: -o-linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+    background: -ms-linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+    background: linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+}
+.nov13 {
+	width: 20%;
+	background-color: #07B8E4;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov111 {
+	width: 40%;
+	background-color: #07B8E4;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov2 {
+	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov21 {
+	width: 92%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov22 {
+	width: 92%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov23 {
+	width: 92%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov3 {
+	width: 48.2%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov31 {width:152px;	
+background-color:#07B8E4;	
+height:40px;
+/*color:#0080FF;*/
+
+color:black;
+font-size:14px;
+
+ -moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+ -webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+ -khtml-border-radius:5px; /* закругл. для браузера Konquerer системы Linux */
+ border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov210 {width:170px;	
+background-color: #DF0070;;	
+font-weight:bold;
+height:80px;	
+/*color:#0080FF;*/
+color:white;
+font-size:14px;
+ -moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+ -webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+ -khtml-border-radius:5px; /* закругл. для браузера Konquerer системы Linux */
+ border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov2101 {
+	width: 49%;
+	background-color:#07B8E4;;
+	font-weight: bold;
+	height: 80px;
+	/*color:#0080FF;*/
+	color: white;
+	font-size:28px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov2102 {width:170px;	
+background-color: #DF0070;;	
+font-weight:bold;
+height:80px;	
+/*color:#0080FF;*/
+color:white;
+font-size:14px;
+ -moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+ -webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+ -khtml-border-radius:5px; /* закругл. для браузера Konquerer системы Linux */
+ border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov1111 {	width: 40%;
+	background-color: #07B8E4;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov121 {	width: 25%;
+	background-color: #d1d1d1;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov21011 {	width: 49%;
+	background-color:#07B8E4;;
+	font-weight: bold;
+	height: 80px;
+	/*color:#0080FF;*/
+	color: white;
+	font-size:28px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov1112 {	width: 40%;
+	background-color: #07B8E4;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov122 {	width: 25%;
+	background-color: #d1d1d1;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov1113 {	width: 40%;
+	background-color: #07B8E4;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov123 {	width: 27%;
+	background-color: #d1d1d1;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov1114 {	width: 40%;
+	background-color: #07B8E4;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov124 {	width: 27%;
+	background-color: #d1d1d1;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov24 {	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov25 {	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov32 {	width: 48%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov26 {	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov27 {	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov21012 {	width: 49%;
+	background-color:#07B8E4;;
+	font-weight: bold;
+	height: 80px;
+	/*color:#0080FF;*/
+	color: white;
+	font-size:28px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov241 {width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov1115 {	width: 40%;
+	background-color: #07B8E4;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov125 {	width: 27%;
+	background-color: #d1d1d1;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov126 {	width: 27%;
+	background-color: #d1d1d1;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov127 {	width: 27%;
+	background-color: #d1d1d1;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov128 {	width: 45%;
+	background-color: #d1d1d1;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 10px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov1281 {width: 45%;
+	background-color: #d1d1d1;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 10px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov12811 {width: 45%;
+	background-color: #d1d1d1;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 10px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov28 {	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov29 {	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov211 {	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov212 {	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov213 {	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov214 {	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov215 {	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov216 {	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov217 {	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov218 {	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov219 {	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov33 {	width: 48.2%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov34 {	width: 48.2%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+</style>
+
+    <link rel="stylesheet" href="style_big.css"/>
+
+<!-- 
+Дополнительные сведения об условных комментариях вокруг HTML-тегов в верхней части файла:
+paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
+
+Выполните следующие действия, если вы используете модифицированную сборку modernizr (http://www.modernizr.com/):
+* вставьте здесь ссылку на свой javascript;
+* удалите ссылку ниже на html5shiv;
+* добавьте класс no-js в HTML-теги в верхней части;
+* вы также можете удалить ссылку на respond.min.js, если MQ Polyfill входит в сборку modernizr. 
+-->
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="respond.min.js"></script>
+<!--     <script type="text/javascript" src="calc.js"></script>
+ -->
+<script>
+var wynik=0, op=0, nowe=0, nowe2=0, done=1, oset=0, kropka, temp;
+function reset(value)
+{
+document.calc.ekran.value = value;
+wynik = 0,
+op = 0,
+nowe = 0,
+nowe2 = 0;
+done = 1;
+oset = 0;
+}
+function wspolna(new_temp)
+{
+kropka = 1;
+if(nowe || done) {
+nowe = 0;
+done = 0;
+temp = new_temp;
+}
+for(var i=0; i<temp.length; i++) if (temp[i]=='.') kropka=0;
+}
+function button(ktory,ktory2)
+{
+temp = document.calc.ekran.value;
+if(ktory2=='.') {
+wspolna('0');
+if(kropka) {
+temp += ktory2;
+document.calc.ekran.value = temp;
+oset = 0;
+}
+}
+if(ktory>=0 && ktory<=9) {
+wspolna('');
+if(temp==0 && kropka==1) temp='';
+temp += ktory;
+document.calc.ekran.value = temp;
+oset = 1;
+}
+if(ktory2=='-' || ktory2=='+' || ktory2=='/' || ktory2=='*') {
+if(nowe) op = ktory2
+else {
+if(!nowe2) {
+op = ktory2;
+wynik = temp;
+nowe2=1;
+}
+else {
+wynik = eval(wynik + op + temp);
+op = ktory2;
+document.calc.ekran.value = wynik;
+}
+oset=0;
+nowe = 1;
+}
+}
+if(ktory2=='1/x' ) { wynik = eval(1 / temp) ; reset(wynik); }
+if(ktory2=='sqrt') { wynik = Math.sqrt(temp); reset(wynik); }
+if(ktory2=='exp' ) { wynik = Math.exp(temp) ; reset(wynik); }
+if(ktory2=='+/-') document.calc.ekran.value = eval(-temp);
+if(ktory2=='=' && oset && op!='0') reset(eval(wynik + op + temp));
+if (ktory2=='C') reset(0);
+if(document.calc.ekran.value[0] == '.')
+document.calc.ekran.value = '0' + document.calc.ekran.value;
+}
+</script>
+
+
+	<!-- Add jQuery library -->
+	<script type="text/javascript" src="fancybox/lib/jquery-1.10.1.min.js"></script>
+
+	<!-- Add mousewheel plugin (this is optional) -->
+	<script type="text/javascript" src="fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+
+	<!-- Add fancyBox main JS and CSS files -->
+	<script type="text/javascript" src="fancybox/source/jquery.fancybox.js?v=2.1.5"></script>
+	<link rel="stylesheet" type="text/css" href="fancybox/source/jquery.fancybox.css?v=2.1.5" media="screen" />
+
+	<!-- Add Button helper (this is optional) -->
+	<link rel="stylesheet" type="text/css" href="fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+	<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+
+	<!-- Add Thumbnail helper (this is optional) -->
+	<link rel="stylesheet" type="text/css" href="fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+	<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+	<!-- Add Media helper (this is optional) -->
+	<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox();
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				openEffect : 'none',
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 0
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+			$(".fancybox.iframe").click(function() {
+				$.fancybox.open({
+					//href : 'iframe.html',
+					//type : 'iframe',
+					autosize : true,
+					Width: 1000,
+					Height: 800,
+					minWidth: 1000,
+					minHeight: 800,
+					fitToView: true,
+					padding : 0
+				});
+			});
+
+		});
+	</script>
+<!--	<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>//-->
+	<style type="text/css">
+		a.fancybox, a.fancybox.iframe{text-decoration:none; border:0px; color:#000;}
+		---a.fancybox, a.fancybox.iframe:hover{color:#000;}
+		div.v_kateg_tovar:hover{color:#aaa;}
+	</style>
+
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src="jquery-pack.js"></script>
+	<script src="jquery.js"></script>
+
+	<script type="text/javascript">
+		//function setImage(num)
+		//{
+		//	alert(num);
+		//}
+
+		function init()
+		{
+			//for (var i = 0; i < 5; i++){
+			var input = document.createElement("input");
+			input.type = "text";
+			input.value = "";
+			input.style.width = "30px";
+			input.style.marginLeft = "4px";
+			//input.style.maxlength = "3px";
+			//button.onclick = setImage(button);
+			//getElementById(this).
+			//	getElementById(this).appendChild(input);
+			//}
+			var a1=$(getElementById(this)).parent();
+			a1.appendChild(input);
+		}
+
+	</script>
+
+</head>
+<body>
+<div class="gridContainer clearfix" >
+  <div id="LayoutDiv1" style="border: 1px solid 
+	#07B8E4;" >
+    <div id="header1" align="center" border="1" >
+    <br>
+      <table width="91%" height="93" border="0">
+        <tr>
+          <td width="16%" height="89" align="right">&nbsp;</td>
+          <td width="17%" align="center"><a href="index.html" style="border:0px;"><img src="лог_лог_111.png" alt="логотип"></a></td>
+          <td width="40%" align="center"><div style="font-size: 10px; color: #DF0070; letter-spacing: 5px;" align="center"> ЕДИНАЯ ТОРГОВАЯ ПЛОЩАДКА</div>
+          <div align="center" style="font-size: 50px; color:#07B8E4;"><b>ИнтерЦУМ</b></div></td>
+          <td width="27%" valign="bottom"><table width="98%"  border="0">
+            <tr>
+              <td height="20" colspan="2" align="right">&nbsp;</td>
+            </tr>
+            <tr>
+              <td height="19" align="right" style="font-size: 12px; color:#07B8E4;">тел.:</td>
+              <td align="left" style="font-size: 12px; color:#07B8E4;"><b>8(3519)47-40-17<b></td>
+            </tr>
+            <tr>
+              <td height="19" align="right" style="font-size: 12px; color:#07B8E4;">e-mail:</td>
+              <td align="left" style="font-size: 12px; color:#07B8E4;"><a href="mailto:intecum@mail.ru" style="font-size: 12px; color:#07B8E4;letter-spacing: 1px;"> <b>intercum@mail.ru</b></a></td>
+            </tr>
+          </table>
+         </td>
+        </tr>
+      </table>
+      <br>
+     <hr width="100%" align=center>
+    </div>
+    
+    <div id="rec1" align="center">
+      <table width="90%" height="36" border="0">
+        <tr>
+          <td width="32%" height="32" align="center" valign="top" bgcolor="#D3F2FE" style="font-size: 20px; color:#07B8E4;" >ВЫБОР</td>
+          <td width="41%" align="center" valign="top" bgcolor="#D3F2FE" style="font-size: 20px; color:#07B8E4;" >Добавить товар</td>
+          <td align="center" valign="top" style="font-size: 10px; color:#07B8E4;" ><a>
+<!--             <input name="prosm2" type="submit" class="nov12811" id="prosm2" value="Юр. лицо">
+          </a>
+          <input name="reg2" type="submit" class="nov12811" id="reg2" value="Помощь"></td>
+ -->        </tr>
+      </table>
+    </div>
+    
+  
+    
+        <div id="osn" name="osn">
+        <form enctype="multipart/form-data" name="f1" id="f1" action="add_product_s.html" method="post">
+        <br>
+          <table width="99%" border="0" cellpadding=4 cellspacing=4 style="margin:5px; padding:5px;">
+           <tr>
+			<td width="12%" height="98" align="right" >
+				<img src="ap1.jpg" name="foto1" id="foto1" alt="карт1" width="100" height="97" style="width:100px; height:100px; opacity:1; z-index:9; position:absolute;" />
+				<input type="file" name="files[]" id="files" onchange="foto1.src=files[0].name;" style="width:100px; height:100px; opacity:0; z-index:10; position:relative;" />
+			</td>
+			<td width="12%" align="left" >
+				<img src="ap1.jpg" name="foto2" id="foto2" alt="карт1" width="100" height="97" style="width:100px; height:100px; opacity:1; z-index:9; position:absolute;" />
+				<input type="file" name="files[]" id="files" onchange="foto2.src=files[0].name;" style="width:100px; height:100px; opacity:0; z-index:10; position:relative;" />
+			</td>
+			<td width="58%" rowspan="3">
+				<table>
+				<tr> <td> <p>Название:</p></td><td><u><b><input type="text" id="gname" name="gname" value="введите название товара..." onblur="if(this.value=='') this.value='введите название товара...';" onfocus="if(this.value=='введите название товара...') this.value='';" style="height:35px; width:300px; font-size:16px;" /></b></u></td> </tr> 
+<!-- 				<tr> <td> <p>Цена:</p></td><td><u><input type="text" id="total_price" name="total_price" value="" style="height:35px; width:130px; font-size:16px;" maxlength="9" /> </u></td> </tr> 
+ -->				<tr> <td> <select id="color" name="color">
+				<option>Цвет</option>
+				<option>Размер</option>
+				</select> </td>
+				
+				<script language="javascript" type="text/javascript">
+					function color_select(){
+						var c=top.document.getElementById(id); d=top.document.getElementById('color1');
+						d.style.background=c.style.background;
+						//return false;
+					}
+					function change_color1() {
+						var sel = document.getElementById('color1');
+						sel.addEventListener('click', function(el){
+							var options = this.children;
+							var selected = this.children[this.selectedIndex];
+							//for(var i=0; i < this.childElementCount; i++){
+								sel.style.backgroundColor = selected.style.backgroundColor;
+							//}
+							//var selected = this.children[this.selectedIndex];
+							   // sel.style.backgroundColor = \'red\';
+							}, false);
+							}
+					function change_color2() {
+						var sel = document.getElementById('color2');
+						sel.addEventListener('click', function(el){
+							var options = this.children;
+							var selected = this.children[this.selectedIndex];
+							//for(var i=0; i < this.childElementCount; i++){
+								sel.style.backgroundColor = selected.style.backgroundColor;
+							//}
+							//var selected = this.children[this.selectedIndex];
+							   // sel.style.backgroundColor = \'red\';
+							}, false);
+							}
+					function change_color3() {
+						var sel = document.getElementById('color3');
+						sel.addEventListener('click', function(el){
+							var options = this.children;
+							var selected = this.children[this.selectedIndex];
+							//for(var i=0; i < this.childElementCount; i++){
+								sel.style.backgroundColor = selected.style.backgroundColor;
+							//}
+							//var selected = this.children[this.selectedIndex];
+							   // sel.style.backgroundColor = \'red\';
+							}, false);
+							}
+				</script>
+				
+				 <td id="colors" name="colors"> 
+						<!-- <input type=text style="width:50px; height:35px; font-size:16px;" id="color1" name="color1" /> -->
+						<!-- <input type=text id="color2" name="color2" style="width:50px; height:35px; font-size:16px;" /> --> 
+						<!-- <input type=text id="color3" name="color3" style="width:50px; height:35px; font-size:16px;" /> -->
+						<select name="color1" id="color1" style="width:50px;" onclick="change_color1();">
+<!-- 							<option name="c1" id="c1" style="background:white;"></option>
+							<option name="c2" id="c2" style="background:black;" onclick="color_select(this);"><span style="background-color:black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></option>
+							<option name="c3" id="c3" style="background:red;" onclick="color1.style.background=this.style.background"><span style="background-color:red;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></option>
+							<option name="c4" id="c4" style="background:orange;" onclick="color1.style.background=this.style.background"><span style="background-color:orange;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></option>
+							<option name="c5" id="c5" style="background:yellow;" onclick="color1.style.background=this.style.background"><span style="background-color:yellow;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></option>
+							<option name="c6" id="c6" style="background:green;" onclick="color1.style.background=this.style.background"><span style="background-color:green;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></option>
+							<option name="c7" id="c7" style="background:lightblue;" selected onclick="color1.style.background=this.style.background"><span style="background-color:lightblue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></option>
+							<option name="c8" id="c8" style="background:blue;" onclick="color1.style.background=this.style.background"><span style="background-color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></option>
+							<option name="c9" id="c9" style="background:violet;" onclick="color1.style.background=this.style.background"><span style="background-color:violet;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></option>
+ -->
+							<OPTION style="background-color:white;"> </OPTION>
+							<OPTION style="background-color:black;"> </OPTION>
+							<OPTION style="background-color:red;"> </OPTION>
+							<OPTION style="background-color:orange;"> </OPTION>
+							<OPTION style="background-color:yellow;"> </OPTION>
+							<OPTION style="background-color:green;"> </OPTION>
+							<OPTION style="background-color:lightblue;"> </OPTION>
+							<OPTION style="background-color:blue;"> </OPTION>
+							<OPTION style="background-color:violet;"> </OPTION>
+						</select>
+						<select name="color2" id="color2" style="width:50px;" onclick="change_color2();">
+							<OPTION style="background-color:white;"> </OPTION>
+							<OPTION style="background-color:black;"> </OPTION>
+							<OPTION style="background-color:red;"> </OPTION>
+							<OPTION style="background-color:orange;"> </OPTION>
+							<OPTION style="background-color:yellow;"> </OPTION>
+							<OPTION style="background-color:green;"> </OPTION>
+							<OPTION style="background-color:lightblue;"> </OPTION>
+							<OPTION style="background-color:blue;"> </OPTION>
+							<OPTION style="background-color:violet;"> </OPTION>
+						</select>
+						<select name="color3" id="color3" style="width:50px;" onclick="change_color3();">
+							<OPTION style="background-color:white;"> </OPTION>
+							<OPTION style="background-color:black;"> </OPTION>
+							<OPTION style="background-color:red;"> </OPTION>
+							<OPTION style="background-color:orange;"> </OPTION>
+							<OPTION style="background-color:yellow;"> </OPTION>
+							<OPTION style="background-color:green;"> </OPTION>
+							<OPTION style="background-color:lightblue;"> </OPTION>
+							<OPTION style="background-color:blue;"> </OPTION>
+							<OPTION style="background-color:violet;"> </OPTION>
+						</select>
+						<input type=button id="plus" onclick="init();" value="+" />
+				  </td> </tr>
+				  
+				  <br />
+				<tr> <td> <select id="complect" name="complect">
+				<option>Комплектация</option>
+				<option>Вес (кг)</option>
+				<option>Метраж (см)</option>
+				<option>Площадь (м2)</option>
+				<option>Объем (м3)</option>
+				<option>Литраж (л)</option>
+				</select> </td>  
+				 <td> 
+					<input type=text id="complect1" name="complect1" style="width:50px; height:35px; font-size:16px;" />
+					<input type=text id="complect2" name="complect2" style="width:50px; height:35px; font-size:16px;" />
+					<input type=text id="complect3" name="complect3" style="width:50px; height:35px; font-size:16px;" />
+				 </td>
+				</tr><!-- Белый Черный Красный Синий Зеленый//-->
+				<tr> <td> Прикрепить цену:</td> <td>
+					<input type=text id="price1" name="price1" style="width:50px; height:35px; font-size:16px;" maxlength="9" onchange="total_price.value=price1.value;" />
+					<input type=text id="price2" name="price2" style="width:50px; height:35px; font-size:16px;" maxlength="9" onchange="total_price.value=price2.value;" />
+					<input type=text id="price3" name="price3" style="width:50px; height:35px; font-size:16px;" maxlength="9" onchange="total_price.value=price3.value;" />
+				 </td>
+				</tr> 
+				<tr> <td> Инструменты: </td></tr></table>
+				<SCRIPT language="javascript" type="text/javascript">
+					<!--
+					function toggle(id){
+					 var d=document.getElementById(id);
+
+					 if (d.style.display == 'block'){d.style.display='none';}
+					 else{d.style.display='block';}
+
+					return false;
+					}
+					//-->
+				</SCRIPT>
+
+				<p>
+					<a class="fancybox fancybox.iframe" href="percent.html"><input type=button value="Создать скидку (%)" onclick="toggle('percent');" /></a>
+					<a class="fancybox fancybox.iframe" href="calc.html"><input type=button value="Калькулятор" onclick="toggle('calc');" /></a>
+					<a class="fancybox fancybox.iframe" href="imgd/index.html"><input type=button value="Редактор фото" onclick="toggle('photo');" /></a>
+				</p>
+				
+			 </td>	
+			<td width="18%" rowspan="3" valign="top"><p>&nbsp;</p>
+			  <table width="100%" border="0">
+		       <tr>
+		         <td><input type="button" value="Помощь" class="nov2" /></td>
+	            </tr>
+		       <tr>
+		         <td><input type="button" value="Мои товары" class="nov2" /></td>
+	            </tr>
+		       <tr>
+		         <td><input type="button" value="Мои сделки" class="nov2" /></td>
+	            </tr>
+		       <tr>
+		         <td><input type="button" value="Архив" class="nov2" /></td>
+	            </tr>
+		       <tr>
+		         <td height="44"><input type="button" value="Удалить стр" class="nov2" /></td>
+	            </tr>
+	          </table>
+		     <p>&nbsp;</p></td>	
+				
+			
+			</tr>
+           <tr>
+             <td height="97" align="right" >
+				<img src="ap1.jpg" name="foto3" id="foto3" alt="карт1" width="100" height="97" style="width:100px; height:100px; opacity:1; z-index:9; position:absolute;" />
+				<input type="file" name="files[]" id="files" onchange="foto3.src=files[0].name;" style="width:100px; height:100px; opacity:0; z-index:10; position:relative;" />
+			</td>
+             <td height="97" align="left" >
+				<img src="ap1.jpg" name="foto4" id="foto4" alt="карт1" width="100" height="97" style="width:100px; height:100px; opacity:1; z-index:9; position:absolute;" />
+				<input type="file" name="files[]" id="files" onchange="foto4.src=files[0].name;" style="width:100px; height:100px; opacity:0; z-index:10; position:relative;" />
+			</td>
+           </tr>
+           <tr>
+             <td height="97" align="right" >
+				<img src="ap1.jpg" name="foto5" id="foto5" alt="карт1" width="100" height="97" style="width:100px; height:100px; opacity:1; z-index:9; position:absolute;" />
+				<input type="file" name="files[]" id="files" onchange="foto5.src=files[0].name;" style="width:100px; height:100px; opacity:0; z-index:10; position:relative;" />
+			</td>
+             <td height="97" align="left" >
+				<img src="ap1.jpg" name="foto6" id="foto6" alt="карт1" width="100" height="97" style="width:100px; height:100px; opacity:1; z-index:9; position:absolute;" />
+				<input type="file" name="files[]" id="files" onchange="foto6.src=files[0].name;" style="width:100px; height:100px; opacity:0; z-index:10; position:relative;" />
+			</td>
+            </tr>
+          </table>
+          <table width="100%" border="0" cellpadding=4 cellspacing=4 style="margin:5px; padding:5px;">
+          <tr>
+              <td width="268" height="144"> <p>
+                <label for="nazv"></label>
+				
+				<script language="javascript" type="text/javascript">
+					function iframe_descr(){
+						var iframe = document.createElement("iframe");
+						iframe.name = "iframe_desc";
+						iframe.id = "iframe_desc";
+						iframe.src = "description.html";
+						iframe.style.width = "800px";
+						iframe.style.height = "600px";
+						iframe.style.top = "50px";
+						iframe.style.left = "150px";
+						iframe.style.position = "absolute";
+						iframe.style.zIndex = "1000";
+						iframe.style.border = "0px solid white";
+						iframe.style.background = "white";
+						iframe.style.backgroundWidth = "0px";
+						iframe.style.backgroundHeight = "0px";
+						iframe.style.backgroundBorder = "0px";
+						iframe.scrolling = "no";
+						document.body.appendChild(iframe);
+					}
+				</script>
+
+                <textarea name="nazv" cols="" rows="5" id="nazv" style="width:100%;" value="Название и краткое описание основных характеристик товара" onblur="if(this.value=='') this.value='Название и краткое описание основных характеристик товара';" onfocus="if(this.value=='Название и краткое описание основных характеристик товара') this.value='';" onclick="iframe_descr();">Название и краткое описание основных характеристик товара</textarea>
+          </p>
+          <p>&nbsp;</p></td>
+              <!-- <td width="175" valign="top"><u onclick="toggle('descr');" style="cursor:pointer;">Подробно</u></td> -->
+              <td width="175" valign="top"><a class="fancybox fancybox.iframe" href="description.html"><u style="cursor:pointer;">Подробно</u></a></td>
+              <td width="282" valign="top"><input type="button" value="Просмотр" class="nov3" />
+              <input type="button" value="Сохранить" class="nov3" onclick="f1.submit();" /></td>
+              <td width="149" valign="top">&nbsp;</td>
+              </tr>
+              </table>
+         
+        </form>
+    <hr></div>
+    
+          <div id="rec2"> 
+            <div id="rec3">
+              <table width="100%" height="189" border="0">
+                <tr>
+                  <td width="25%" align="center" valign="middle"><img src="i.jpg" alt="1"></td>
+                  <td width="25%" align="center"><img src="i.jpg" alt="1"></td>
+                  <td width="25%" align="center"><img src="i.jpg" alt="1"></td>
+                  <td width="25%" align="center"><img src="i.jpg" alt="1"></td>
+                </tr>
+              </table>
+              
+            </div>
+          </div>
+          <div id="foot1" align=center style="background-color:#07B8E4" ><p >&copy; ИнтерЦУМ</p></div>
+</div>
+</div>
+</body>
+</html>

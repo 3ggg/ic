@@ -1,0 +1,121 @@
+﻿<html>
+<head>
+<title>Калькулятор</title>
+</head>
+<script language="JavaScript">
+<!--
+// deklaracja zmiennych
+var wynik=0, op=0, nowe=0, nowe2=0, done=1, oset=0, kropka, temp;
+function reset(value)
+{
+document.form1.ekran.value = value;
+wynik = 0,
+op = 0,
+nowe = 0,
+nowe2 = 0;
+done = 1;
+oset = 0;
+}
+function wspolna(new_temp)
+{
+kropka = 1;
+if(nowe || done) {
+nowe = 0;
+done = 0;
+temp = new_temp;
+}
+for(var i=0; i<temp.length; i++) if (temp[i]=='.') kropka=0;
+}
+function button(ktory,ktory2)
+{
+temp = document.form1.ekran.value;
+if(ktory2=='.') {
+wspolna('0');
+if(kropka) {
+temp += ktory2;
+document.form1.ekran.value = temp;
+oset = 0;
+}
+}
+if(ktory>=0 && ktory<=9) {
+wspolna('');
+if(temp==0 && kropka==1) temp='';
+temp += ktory;
+document.form1.ekran.value = temp;
+oset = 1;
+}
+if(ktory2=='-' || ktory2=='+' || ktory2=='/' || ktory2=='*') {
+if(nowe) op = ktory2
+else {
+if(!nowe2) {
+op = ktory2;
+wynik = temp;
+nowe2=1;
+}
+else {
+wynik = eval(wynik + op + temp);
+op = ktory2;
+document.form1.ekran.value = wynik;
+}
+oset=0;
+nowe = 1;
+}
+}
+if(ktory2=='1/x' ) { wynik = eval(1 / temp) ; reset(wynik); }
+if(ktory2=='sqrt') { wynik = Math.sqrt(temp); reset(wynik); }
+if(ktory2=='exp' ) { wynik = Math.exp(temp) ; reset(wynik); }
+if(ktory2=='+/-') document.form1.ekran.value = eval(-temp);
+if(ktory2=='=' && oset && op!='0') reset(eval(wynik + op + temp));
+if (ktory2=='C') reset(0);
+if(document.form1.ekran.value[0] == '.')
+document.form1.ekran.value = '0' + document.form1.ekran.value;
+}
+//-->
+</script>
+<body>
+<center>
+<form name="form1">
+<table bgColor="#07B8E4">
+<tbody>
+<tr><td><table bgColor="#fff" border="1" cellPadding="0" cellSpacing="5">
+<tbody>
+<tr align="middle">
+<td colSpan="5"><input name="ekran" value="0" size="20"></td></tr>
+<tr align="middle">
+<td colSpan="4" bgcolor="#07B8E4"><font color="#000" style="font-family:Arial; font-size:14px">Калькулятор</font></td>
+<td><input name="C" onclick="button(11,'C')" type="button" value=" C "></td></tr>
+<tr align="middle">
+<td><input name="7" onclick="button(7 ,'')" type="button" value=" 7 "></td>
+<td><input name="8" onclick="button(8 ,'')" type="button" value=" 8 "></td>
+<td><input name="9" onclick="button(9 ,'')" type="button" value=" 9 "></td>
+<td><input name="/" onclick="button(11,'/')" type="button" value=" / "></td>
+<td><input name="sqrt" onclick="button(11,'sqrt')" type="button" value="sqrt"></td></tr>
+<tr align="middle">
+<td><input name="4" onclick="button(4,'')" type="button" value=" 4 "></td>
+<td><input name="5" onclick="button(5,'')" type="button" value=" 5 "></td>
+<td><input name="6" onclick="button(6,'')" type="button" value=" 6 "></td>
+<td><input name="*" onclick="button(11,'*')" type="button" value=" * "></td>
+<td><input name="exp" onclick="button(11,'exp')" type="button" value="exp"></td></tr>
+<tr align="middle">
+<td><input name="1" onclick="button(1,'')" type="button" value=" 1 "></td>
+<td><input name="2" onclick="button(2,'')" type="button" value=" 2 "></td>
+<td><input name="3" onclick="button(3,'')" type="button" value=" 3 "></td>
+<td><input name="-" onclick="button(11,'-')" type="button" value=" - "></td>
+<td><input name="1/x" onclick="button(11,'1/x')" type="button" value="1/x "></td></tr>
+<tr align="middle">
+<td><input name="0" onclick="button(0,'')" type="button" value=" 0 "></td>
+<td><input name="+/-" onclick="button(11,'+/-')" type="button" value=" +/- "></td>
+<td><input name="." onclick="button(11,'.')" type="button" value=" , "></td>
+<td><input name="+" onclick="button(11,'+')" type="button" value=" + "></td>
+<td><input name="=" onclick="button(11,'=')" type="button" value=" = "></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+</form>
+</body>
+</html>

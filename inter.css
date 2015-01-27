@@ -1,0 +1,255 @@
+﻿@charset "utf-8";
+/* Простой «резиновый» носитель
+   Примечание. Для «резинового» носителя требуется удалить атрибуты высоты и ширины из HTML
+   http://www.alistapart.com/articles/fluid-images/ 
+*/
+img, object, embed, video {
+	max-width: 100%;
+}
+/* IE6 не поддерживает атрибут max-width, поэтому по умолчанию используется ширина 100 % */
+.ie6 img {
+	width:100%;
+}
+
+/*
+	Свойства Dreamweaver Fluid Grid
+	----------------------------------
+	dw-num-cols-mobile:		5;
+	dw-num-cols-tablet:		8;
+	dw-num-cols-desktop:	10;
+	dw-gutter-percentage:	25;
+	
+	Вдохновлено книгой «Отзывчивый веб-дизайн» (Responsive Web Design) Итана Маркота (Ethan Marcote) 
+	http://www.alistapart.com/articles/responsive-web-design
+	
+	и системой Golden Grid Джони Корпи (Joni Korpi)
+	http://goldengridsystem.com/
+*/
+
+/* Мобильный макет: 480 пикс. и меньше. */
+.nov2101:hover{
+	
+color:black;
+
+/*background-color:#07B8E4;;*/
+
+	font-weight:bold
+}
+.gridContainer {
+	margin-left: auto;
+	margin-right: auto;
+	width: 87.36%;
+	padding-left: 1.82%;
+	padding-right: 1.82%;
+	padding-top: 1.82%;
+	
+	border-color:#03F;
+	border-width:medium;
+	
+}
+#LayoutDiv1 {
+	clear: both;
+	float: left;
+	margin-left: 0px;
+	width: 100%;
+	display: block;
+	vertical-align: central;
+}
+#header1 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#rec1 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#osn {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#rec2 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+
+#foot1 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+
+.nov12:hover,.nov111:hover, .nov2:hover,.nov3:hover,.nov128:hover{
+	
+color:white;
+
+/*background-color:#DF0070;;*/
+
+	font-weight:bold
+}
+
+/* Макет для планшета: 481–768 пикс. Наследует стили от мобильного макета. */
+
+@media only screen and (min-width: 481px) {
+.gridContainer {
+	width: 90.675%;
+	padding-left: 1.1625%;
+	padding-right: 1.1625%;
+	border-color:#03F;
+	border-width:medium;
+}
+#LayoutDiv1 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#header1 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#rec1 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	border-color: #C33;
+	border: 2px;
+}
+#osn {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#rec2 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+
+#foot1 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+}
+
+.nov12:hover,.nov111:hover, .nov2:hover,.nov3:hover{
+	
+color:white;
+
+/*background-color:#DF0070;;*/
+
+	font-weight:bold
+}
+
+.nov2101:hover{
+	
+color:black;
+
+background-color:#07B8E4;;
+
+	font-weight:bold
+}
+
+
+/* Макет для настольного компьютера: 769–1232 пикс. (максимум). Наследует стили от мобильного макета и макета для планшета. */
+
+@media only screen and (min-width: 769px) {
+.gridContainer {
+	width: 88.2%;
+	max-width: 1232px;
+	padding-left: 0.9%;
+	padding-right: 0.9%;
+	margin: auto;
+	border-color:#03F;
+	border-width:medium;
+}
+#LayoutDiv1 {
+	clear: none;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	border: 1 dotted #00F;
+}
+
+.nov12:hover,.nov111:hover, .nov2:hover,.nov3:hover{
+	
+color:white;
+
+/*background-color:#DF0070;;*/
+
+	font-weight:bold
+}
+#header1 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#rec1 {
+	clear: none;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	border-color: #C33;
+	border-width: thin;
+}
+#osn {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	height: auto;
+}
+#rec2 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+
+#.nov2101:hover{
+	
+color:black;
+
+/*background-color:#07B8E4;;*/
+
+	font-weight:bold
+}foot1 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+}

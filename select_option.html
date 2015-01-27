@@ -1,0 +1,37 @@
+﻿<html>
+<head>
+<script type="text/javascript">
+function color_select()
+{
+//var x=document.forms[0].elements[0];
+//var a=x.getElemntById('color1');
+//var b=x.options[x.selectedIndex].getElemntById('c2');
+// a.style.background=b.style.background;
+ 
+var x = document.getElementById("color1").selectedIndex;
+var y = document.getElementById("color1").options;
+alert("Index: " + y[x].index + " is " + y[x].text);
+
+}
+</script>
+</head>
+
+<body>
+<!-- <form>
+ --><!-- <p>Select color</p>
+ -->
+	<select name="color1" id="color1" onchange="color_select();">
+		<option name="c1" id="c1" style="background:white;"></option>
+		<option name="c2" id="c2" style="background:black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+		<option name="c3" id="c3" style="background:red;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+		<option name="c4" id="c4" style="background:orange;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+		<option name="c5" id="c5" style="background:yellow;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+		<option name="c6" id="c6" style="background:green;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+		<option name="c7" id="c7" style="background:lightblue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+		<option name="c8" id="c8" style="background:blue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+		<option name="c9" id="c9" style="background:violet;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+	</select>
+<!-- </form>
+ --></body>
+
+</html>

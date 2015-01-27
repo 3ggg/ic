@@ -1,0 +1,136 @@
+﻿#container { 
+    position:relative; 
+    background:#fff; 
+    padding:32px; 
+    height:155px; 
+    border:1px solid #ccc; 
+    border-radius: 15px; 
+} 
+#container2 { 
+    position:relative; 
+    background:#fff; 
+    padding:2px; 
+    height:155px; 
+    border:1px solid #ccc; 
+    border-radius: 15px; 
+} 
+.sliderbutton { 
+    cursor:pointer; 
+    opacity:0.5; 
+ } 
+.sliderbutton2 { 
+    cursor:pointer; 
+    opacity:0.5; 
+ } 
+#slideleft { 
+    display:block; 
+    width:43px; 
+    height:42px; 
+    position:absolute; 
+    left:35px; 
+    top:159px; 
+    z-index:10; 
+    background:url(images/icons.gif) -50px -250px no-repeat 
+} 
+#slideleft2 { 
+    display:block; 
+    width:43px; 
+    height:42px; 
+    position:absolute; 
+    left:35px; 
+    top:159px; 
+    z-index:10; 
+    background:url(images/icons.gif) -50px -250px no-repeat 
+} 
+#slideleft:hover { 
+    background-position:-0 -250px 
+} 
+#slideleft2:hover { 
+    background-position:-0 -250px 
+} 
+#slideright { 
+    background:url(images/icons.gif) 0 90px no-repeat 
+} 
+#slideright2 { 
+    background:url(images/icons.gif) 0 90px no-repeat 
+} 
+#slideright:hover { 
+    background-position:-50px 90px 
+} 
+#slideright2:hover { 
+    background-position:-50px 90px 
+} 
+#slider { 
+    float:left; 
+    position:relative; 
+    overflow:auto; 
+    width:290px; 
+    height:155px 
+} 
+#slider2 { 
+    float:left; 
+    position:relative; 
+    overflow:auto; 
+    width:290px; 
+    height:155px 
+} 
+#slider ul { 
+    position:absolute; 
+    list-style:none; 
+    top:0; 
+    left:0 
+} 
+#slider2 ul { 
+    position:absolute; 
+    list-style:none; 
+    top:0; 
+    left:0 
+} 
+#slider li { 
+    float:left; 
+    width:290px; 
+    height:155px 
+} 
+#slider2 li { 
+    float:left; 
+    width:290px; 
+    height:155px 
+} 
+#pagination { 
+    position:absolute; 
+    top:40px; 
+    right:61px; 
+    list-style:none; 
+    height:25px 
+} 
+#pagination2 { 
+    position:absolute; 
+    top:40px; 
+    right:61px; 
+    list-style:none; 
+    height:25px 
+} 
+#pagination li { 
+    float:left; 
+    cursor:pointer; 
+    height:8px; 
+    width:8px; 
+    background:#ccc; 
+    margin:0 4px 0 0; 
+    border:1px solid #fff 
+} 
+#pagination2 li { 
+    float:left; 
+    cursor:pointer; 
+    height:8px; 
+    width:8px; 
+    background:#ccc; 
+    margin:0 4px 0 0; 
+    border:1px solid #fff 
+} 
+#pagination li:hover, li.current { 
+    background:#000 
+}
+#pagination2 li:hover, li.current2 { 
+    background:#000 
+}  

@@ -1,0 +1,291 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+	<!-- Add jQuery library -->
+	<script type="text/javascript" src="fancybox/lib/jquery-1.10.1.min.js"></script>
+
+	<!-- Add mousewheel plugin (this is optional) -->
+	<script type="text/javascript" src="fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+
+	<!-- Add fancyBox main JS and CSS files -->
+	<script type="text/javascript" src="fancybox/source/jquery.fancybox.js?v=2.1.5"></script>
+	<link rel="stylesheet" type="text/css" href="fancybox/source/jquery.fancybox.css?v=2.1.5" media="screen" />
+
+	<!-- Add Button helper (this is optional) -->
+	<link rel="stylesheet" type="text/css" href="fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+	<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+
+	<!-- Add Thumbnail helper (this is optional) -->
+	<link rel="stylesheet" type="text/css" href="fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+	<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+	<!-- Add Media helper (this is optional) -->
+	<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox();
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				openEffect : 'none',
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 0
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+			$(".fancybox.iframe").click(function() {
+				$.fancybox.open({
+					//href : 'iframe.html',
+					//type : 'iframe',
+					autosize : true,
+					Width: 1000,
+					Height: 800,
+					minWidth: 1000,
+					minHeight: 800,
+					fitToView: true,
+					padding : 0
+				});
+			});
+
+		});
+	</script>
+<!--	<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>//-->
+</head>
+
+<body>
+
+<p id="demo">Нажми кнопку, получишь результат</p>
+<input id="inp0" name="inp0" value="" type="text" maxlength="10" />
+<input id="dt0" name="dt0" value="" type="date" />
+
+<script>
+var i=1;
+var j=1;
+</script>
+
+<button style="width:22px; height:22px; display:inline; cursor:pointer;" onclick="create_el(); create_el_dt(); i++; j++;">+</button>
+
+<script>
+function create_el_dt()
+{
+var dt=document.createElement("input");
+dt.name='dt'+j;
+dt.type='date';
+
+var dt = new Date();
+//dt.value=j+' + '+top.dt.value; //dt.getUTCDate()+'.'+dt.getUTCMonth()+'.'+dt.getUTCFullYear();
+dt.innerHTML=dt.getUTCDate()+'.'+dt.getUTCMonth()+'.'+dt.getUTCFullYear();
+console.log(dt.getUTCDate()+'.'+dt.getUTCMonth()+'.'+dt.getUTCFullYear());
+console.log(dt.getHours()+':'+dt.getMinutes()+":"+dt.getSeconds()+":"+dt.getMilliseconds());
+
+document.body.appendChild(dt);
+}
+</script>
+
+<script>
+function create_el()
+{
+var inp=document.createElement("input");
+inp.name='inp'+i;
+inp.type='text';
+
+//var dt = new Date();
+inp.value=i+' + '+top.inp0.value; //dt.getUTCDate()+'.'+dt.getUTCMonth()+'.'+dt.getUTCFullYear();
+//inp.innerHTML=dt.getUTCDate()+'.'+dt.getUTCMonth()+'.'+dt.getUTCFullYear();
+//console.log(dt.getUTCDate()+'.'+dt.getUTCMonth()+"."+dt.getUTCFullYear());
+//console.log(dt.getHours()+':'+dt.getMinutes()+":"+dt.getSeconds()+":"+dt.getMilliseconds());
+
+document.body.appendChild(inp);
+}
+</script>
+
+<!-- <p><a class="fancybox fancybox.iframe" href="odezhda.html">Одежда и обувь</a></p>
+ -->
+  <p><a class="fancybox fancybox.iframe" href="odezhda.html">одежда и обувь</a></p>
+  <p><a class="fancybox fancybox.iframe" href="sport.html">спорт и отдых</a></p>
+  <p><a class="fancybox fancybox.iframe" href="microel.html">микро-электроника и быт. техника</a></p>
+  <p><a class="fancybox fancybox.iframe" href="access.html">аксес-суары</a>
+  <p><a class="fancybox fancybox.iframe" href="org_kant.html">орг-техника канц-товары</a></p>
+  <p><a class="fancybox fancybox.iframe" href="juvelir.html">ювелирные изделия</a></p>
+  <p><a class="fancybox fancybox.iframe" href="avto_moto.html">авто-мото</a></p>
+  <p><a class="fancybox fancybox.iframe" href="mebel.html">мебель недви-жимость</a></p>
+  <p><a class="fancybox fancybox.iframe" href="mamal.html">всё для мам и детей</a></p>
+  <p><a class="fancybox fancybox.iframe" href="stroi_met.html">метизы строй-материалы</a></p>
+  <p><a class="fancybox fancybox.iframe" href="tools.html">инстру-менты</a>
+  <p><a class="fancybox fancybox.iframe" href="cosmetic.html">косметика гигиена</a></p>
+		
+</body>
+</html>

@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<link href="easy_slider/css/screen.css" rel="stylesheet" type="text/css" media="screen" />
+	<script type="text/javascript" src="easy_slider/js/jquery.js"></script>
+	<script type="text/javascript" src="easy_slider/js/easySlider1.7.js"></script>
+</head>
+<body>
+		<div id="slider">
+			<ul>				
+				<li><a href="#"><img src="lancer.jpg" alt="Preview" /></a></li>
+				<li><a href="#"><img src="lancer.jpg" alt="Preview" /></a></li>
+				<li><a href="#"><img src="lancer.jpg" alt="Preview" /></a></li>
+				<li><a href="#"><img src="lancer.jpg" alt="Preview" /></a></li>
+				<li><a href="#"><img src="lancer.jpg" alt="Preview" /></a></li>			
+			</ul>
+		</div>
+		<div id="slider2">
+			<ul>				
+				<li><a href="#"><img src="lancer.jpg" alt="Preview" /></a></li>
+				<li><a href="#"><img src="lancer.jpg" alt="Preview" /></a></li>
+				<li><a href="#"><img src="lancer.jpg" alt="Preview" /></a></li>
+				<li><a href="#"><img src="lancer.jpg" alt="Preview" /></a></li>
+				<li><a href="#"><img src="lancer.jpg" alt="Preview" /></a></li>			
+			</ul>
+		</div>
+		<div id="slider3">
+			<ul>				
+				<li><a href="#"><img src="lancer.jpg" alt="Preview" /></a></li>
+				<li><a href="#"><img src="lancer.jpg" alt="Preview" /></a></li>
+				<li><a href="#"><img src="lancer.jpg" alt="Preview" /></a></li>
+				<li><a href="#"><img src="lancer.jpg" alt="Preview" /></a></li>
+				<li><a href="#"><img src="lancer.jpg" alt="Preview" /></a></li>			
+			</ul>
+		</div>
+		
+ 	<script type="text/javascript">
+			$(document).ready(function(){
+			   $("#slider").easySlider({
+				  auto: true,
+				  continuous: true,
+					controlsShow: true,
+					speed: 700,
+					pause: 3000
+			   });
+			   $("#slider2").easySlider({
+				  auto: true,
+				  continuous: true,
+					controlsShow: true,
+					speed: 700,
+					pause: 3000
+			   });
+			   $("#slider3").easySlider({
+				  auto: true,
+				  continuous: true,
+					controlsShow: true,
+					speed: 700,
+					pause: 3000
+			   });
+			});
+	</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+﻿<?php require_once 'db.php'; ?>
+<?php 
+	if(isset($_POST['text_descr']) and $_POST['text']<>""){
+		$sql="update goods g set g.description='' where g.id=$_SESSION[gid]";
+	}
+?>
+
+	<script src="jquery.js"></script>
+
+<!-- <div id="descr" style="display:block; z-index:100; position:absolute; width:300px; height:300px;">
+ --><div name="descr" id="descr" style="display:block; z-index:100; position:absolute; width:99%; height:98%;">
+<!-- 					<iframe id="ifdescr" src="descr.html" style=" width:420px; height:290px; background:#07B8E4;"></iframe>
+-->
+<!-- 	<div id="descr1" style="width:400px; height:270px; border:1px #d1d1d1 solid; font-family:Arial; font-size:14px; font-weight:normal; background:#07B8E4;">
+ -->	<div id="descr1" style="width:98%; height:98%; border:1px #d1d1d1 solid; font-family:Arial; font-size:14px; font-weight:normal; background:#07B8E4;">
+	<center style="margin:10px;">
+	<!-- 	<input type="textarea" style="width:200px; height:100px; text-vertical-align:top;" />
+	 -->
+	  <form name="fdescr" id="fdescr" action="description.html" method="post">
+		<p>Введите полное описание товара:</p>
+		<p><textarea rows="27" cols="80" name="text_descr" id="text_descr"></textarea></p>
+		<!-- onchange="top.document.getElementById('iframe_desc').remove();" -->
+	<!--     <p><input type="submit" value="ОК"></p>
+	 -->  <!-- <br /> <br /> -->
+<!-- 		<input type="button" style="width:auto;" value="OK" onclick="toggle('descr'); nazv.value=text.value;" />
+		<input type="button" style="width:auto;" value="Отмена" onclick="toggle('descr');" />
+ -->
+ 		<input type="submit" style="width:auto;" value="OK" onsubmit="top.document.iframe_desc.remove(); alert($.post['text_descr']);" />
+
+		</form>
+
+	</center>
+	
+	</div>
+</div>
+
+
+<?php 
+	print_r($_POST['text_descr']);
+	if(isset($_POST['text_descr']) and $_POST['text_descr']<>""){
+		echo "<script>alert('".$_POST['text_descr']."')</script>";
+	}
+?>

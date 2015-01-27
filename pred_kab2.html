@@ -1,0 +1,1559 @@
+﻿<?php require_once 'db.php'; ?>
+
+<?php
+/**  
+ * Функция загрузки файла (аплоадер)  
+ * @param  int    $max_file_size    максимальный размер файла в мегабайтах  
+ * @param  array  $valid_extensions массив допустимых расширений  
+ * @param  string $upload_dir       директория загрузки  
+ * @return array                    сообщение о ходе выполнения  
+ */ 
+    $extensions = array('jpg', 'jpeg', 'png', 'gif');  
+    $upload_dir = 'img_user';  // папка для загрузки (создать на сервере)
+ 
+    function uploadHandle($max_file_size = 1024, $valid_extensions = array(), $upload_dir = '.')  
+    {  
+       
+        $error = null;  
+        $info  = null;  
+        $max_file_size *= 1048576;  // размер файла в Mb
+        if ($_FILES['files']['error'] === UPLOAD_ERR_OK)  
+        {  
+            // проверяем расширение файла  
+            $file_extension = pathinfo($_FILES['files']['name'], PATHINFO_EXTENSION);  
+            if (in_array(strtolower($file_extension), $valid_extensions))  
+            {  
+                // проверяем размер файла  
+                if ($_FILES['files']['size'] < $max_file_size)  
+                {  
+          $file_name = /*time() . */ $_FILES['files']['name'];  // к имени файла добавляем метку времени, чтобы исключить одинаковые имена
+                    $destination = $upload_dir .'/' . $file_name;  
+       
+                    if (move_uploaded_file($_FILES['files']['tmp_name'], $destination))  
+                        $info = 'Файл успешно загружен';  
+                    else 
+                        $error = 'Не удалось загрузить файл';  
+                }   
+                else 
+                    $error = 'Размер файла больше допустимого';  
+            }   
+            else 
+                $error = 'У файла недопустимое расширение';  
+        }   
+        else 
+        {  
+            // массив ошибок  
+            $error_values = array( 
+ 
+                UPLOAD_ERR_INI_SIZE   => 'Размер файла больше разрешенного директивой upload_max_filesize в php.ini',  
+                UPLOAD_ERR_FORM_SIZE  => 'Размер файла превышает указанное значение в MAX_FILE_SIZE',                            
+                UPLOAD_ERR_PARTIAL    => 'Файл был загружен только частично',   
+                UPLOAD_ERR_NO_FILE    => 'Не был выбран файл для загрузки',   
+                UPLOAD_ERR_NO_TMP_DIR => 'Не найдена папка для временных файлов',   
+                UPLOAD_ERR_CANT_WRITE => 'Ошибка записи файла на диск'
+ 
+                                  );  
+       
+            $error_code = $_FILES['files']['error'];  
+       
+            if (!empty($error_values[$error_code]))  
+                $error = $error_values[$error_code];  
+            else 
+                $error = 'Случилось что-то непонятное';  
+        }  
+       
+        return array('info' => $info, 'error' => $error);  
+    }
+?>
+
+<!-- <form action="function.html" enctype="multipart/form-data" method="POST" name="form_upload">
+  <label>Фото :<input id="files" name="files" type="file" /></label>
+  <label><input name="button" type="submit" value="Отправить" /></label>
+</form>
+ -->
+<?php
+//include("function.php"); // подключаем файл с функцией
+    // Запускаем функцию
+if(!empty($_POST['button']) or empty($_POST['button'])) // если кнопка "button"  нажата
+{    
+$message = uploadHandle(8, $extensions, $upload_dir);
+// Выводим сообщение 
+echo "<script> alert('".$message['error'] ? $message['error'] : $message['info']."');</script>";
+}
+?>
+
+
+<?php
+							
+							//if($_SESSION[secpic]==$_SESSION[text_k])
+							//{
+							//	echo "<script>alert('Спасибо за регистрацию!')</script>";
+							//}else{
+							//	echo "<script>alert('Неправильно введен код с картинки!')</script>";
+							//}
+//$color_v="";
+//$size_v="";
+//$complect_v="";
+//$price_v="";
+//echo "<script>alert('".$_REQUEST['naimen']."');</script>";
+if (isset($_POST['naimen']) and $_POST['naimen']<>"" /*and trim($_SESSION['naimen'])<>""*/) {
+
+//$uploaddir = "/var/www/u0040454/data/uploads/users/".$_POST['naimen']."/";
+
+//chmod("Z:\tmp", 0777);
+//chmod("Z:\home\intercum08\www\users", 0777);
+//chmod("Z:\home\intercum08\www\users\foto", 0777);
+/*
+      //Создает папку с именем сесси в папке "upload"
+      mkdir("Z:\home\intercum08\www\upload"."\\".session_id(), 777);
+      //Перемещает загруженный файл в папку "upload/test"
+      move_uploaded_file($_FILES['files']['tmp_name'], "Z:\home\intercum08\www\upload\\".session_id()."\\" . $_FILES['files']['name']);
+      //Сообщает об успешном переносе файла "в upload/test"
+      echo "Stored in: " . "Z:\home\intercum08\www\upload\\".session_id()."\\" . $_FILES['files']['name'];
+	  
+$uploaddir = "Z:\home\intercum08\www\upload\\".session_id()."\\"; //.$_POST['naimen']."/";
+$uploadfile = $uploaddir.basename($_FILES['files']['name']);
+echo '<pre>';
+if (move_uploaded_file($_FILES['files']['tmp_name'], $uploadfile)) {
+    echo "Файл корректен и был успешно загружен.\n";
+} else {
+    echo "Возможная атака с помощью файловой загрузки!\n";
+}
+echo 'Некоторая отладочная информация:';
+print_r($_FILES);
+print "</pre>";
+*/
+//$isk2_v=$_REQUEST['isk2'];
+	//mysql_query("SET NAMES 'utf8';"); 
+	//mysql_query("SET CHARACTER SET 'utf8';"); 
+	//mysql_query("SET SESSION collation_connection = 'utf8_general_ci';");//	mysql_set_charset('utf8');
+//mysql_query ("set character_set_client='utf8'"); 
+//mysql_query ("set character_set_results='utf8'"); 
+//mysql_query ("set collation_connection='utf8_general_ci'");
+
+/*$result=mysql_query("
+						insert into shop (name,fsobst,inn,ogrn,phone,email,skype,password,)
+									VALUES(".$_SESSION['naimen'].",".$_SESSION['forma_sobst'].",".$_SESSION['inn']
+											.",".$_SESSION['ogrn'].",".$_SESSION['phone'].",".$_SESSION['email'].",".$_SESSION['skype'].",".$_SESSION['pass1'].
+					")") or die (mysql_error());*/
+
+$result = mysql_query("select ifnull(count(*),0) cnt from shop where name='".$_POST['naimen']."' or login='".$_POST['email']."' limit 1") or die (mysql_error());
+if(isset($result) and $result<>"" and $result){
+ while ($row = mysql_fetch_assoc($result))
+				{
+				  //echo $row['cnt']."<br>";
+if($row['cnt']>0){
+	echo "<script>alert('user(s) exist(s)!');</script>";
+	}
+else{
+$result = mysql_query("
+						insert into shop(user_id, name, fsobst, inn, ogrn, phone, email, skype, password, registered, lastlogin, login, foto)
+						VALUES(1,'".$_POST['naimen']."', '".$_POST['forma_sobst']."', ".$_POST['inn'].", ".$_POST['ogrn'].", '".$_POST['phone']."', '".$_POST['email']."', '".$_POST['skype']."', '".$_POST['pass1']."', now(), now(), '".$_POST['email']."', 'img_user/".$_FILES['files']['name']."')
+					 ") or die (mysql_error()); //$_FILES['files']['name']
+		}
+$result_cnt = mysql_query("
+						select ifnull(count(g.id),0) gcnt
+						from shop s
+						join goods g on g.user_id=s.user_id
+						where s.email='".$_POST['email']."' and s.login='".$_POST['email']."'
+					 ") or die (mysql_error()); //$_FILES['files']['name']
+
+$result_gs = mysql_query("
+						select ifnull(count(g.sold),0) gsold
+						from shop s
+						join goods g on g.user_id=s.user_id
+						where s.email='".$_POST['email']."' and s.login='".$_POST['email']."' and g.sold=1
+					 ") or die (mysql_error()); //$_FILES['files']['name']
+		
+while ($row_cnt = mysql_fetch_assoc($result_cnt))
+	{
+		/*echo*/ $_SESSION['gcnt']=$row_cnt['gcnt'];
+	}
+	
+while ($row_gs = mysql_fetch_assoc($result_gs))
+	{
+		/*echo*/ $_SESSION['gsold']=$row_gs['gsold'];
+	}
+			}
+}else{ echo "Error!"; }
+}
+else {
+echo "Введите что-нибудь!";
+//die();
+}
+$a.close;
+?>
+<?php
+//$goods_id_v="";
+/*if (isset($_SESSION['uid']) and $_SESSION['uid']<>"") {
+//$goods_id_v=$_GET['goods_id'];
+$result=mysql_query("
+						select u.id uid, u.name uname, u.lastname ulastname, u.email uemail, u.phone uphone, u.skype uskype, u.foto ufoto,
+								r.rate rrate
+						from users u
+							join ratings r on r.shop_id=u.id
+						where u.id = ".$_SESSION['uid']."
+					") or die (mysql_error());
+				while ($row = mysql_fetch_assoc($result)){
+				$_SESSION['uid']=$row['uid'];
+				$_SESSION['uname']=$row['uname'];
+				$_SESSION['ulastname']=$row['ulastname'];
+				$_SESSION['uemail']=$row['uemail'];
+				$_SESSION['uphone']=$row['uphone'];
+				$_SESSION['uskype']=$row['uskype'];
+				$_SESSION['ufoto']=$row['ufoto'];
+				$_SESSION['rrate']=$row['rrate'];
+				}
+}*/
+if (isset($_POST['email']) and $_POST['email']<>"") {
+$result=mysql_query("
+						select u.id uid, u.name uname, /*u.lastname ulastname,*/ u.email uemail, u.phone uphone, u.skype uskype, u.foto ufoto
+								/*r.rate rrate*/
+						from shop u
+							/*join ratings r on r.shop_id=u.id*/
+						where u.login = '".$_POST['email']."'
+					") or die (mysql_error());
+				while ($row = mysql_fetch_assoc($result)){
+				$_SESSION['uid']=$row['uid'];
+				$_SESSION['login']=$row['login'];
+				$_SESSION['uname']=$row['uname'];
+				//$_SESSION['ulastname']=$row['ulastname'];
+				$_SESSION['uemail']=$row['uemail'];
+				$_SESSION['uphone']=$row['uphone'];
+				$_SESSION['uskype']=$row['uskype'];
+				$_SESSION['ufoto']=$row['ufoto'];
+				//$_SESSION['rrate']=$row['rrate'];
+				}
+	}
+?>
+
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+ <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+ <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Единая торговая площадка ИнтерЦУМ</title>
+<link href="boilerplate.css" rel="stylesheet" type="text/css">
+<link href="inter.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="themes.css"/>
+    <script type="text/javascript" src="colorpicker.min.js"></script>
+<style type="text/css">
+
+.vv_inf{
+	
+	width: 92%;
+	
+}
+
+
+#town3 {
+	width: 95%;
+	background-color: white;
+	font-size: 14px;
+	max-height: 100%;
+}
+#town4 {
+	width: 95%;
+	background-color: white;
+	font-size: 14px;
+	max-height: 100%;
+}
+#isk2 {
+	width: 100%;
+	background-color: #EFEFEF;
+	font-size: 12px;
+	text-align: left;
+	height: 20px;
+}
+.v_kateg_tovar{
+font-size:8px;	
+background-color:#D6ECFC;
+height:40px;	
+	}
+	
+	.v_kateg_tovar:hover{
+font-size:8px;
+cursor:pointer;	
+color:white;
+background-color:#D6ECFC;
+height:40px;	
+	}
+.nov1 {width:97px;	
+/*background-color: #07B8E4;	*/
+height:30px;	
+/*color:#0080FF;*/
+color:black;
+
+font-size:14px;
+ -moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+ -webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+ -khtml-border-radius:5px; /* закругл. для браузера Konquerer системы Linux */
+ border-radius: 5px; /* закругление углов для всех, кто понимает */
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0A5B7A', endColorstr='#ffffff');
+background: -moz-linear-gradient(top, #e2e2e2 0%, #dbdbdb 50%, #d1d1d1 51%, #fefefe 100%);
+    background: -webkit-linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+    background: -o-linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+    background: -ms-linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+    background: linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+}
+.nov1 {
+	width: 25%;
+	background-color: #07B8E4;
+	height: 100%;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov11 {width:97px;	
+/*background-color: #07B8E4;	*/
+height:30px;	
+/*color:#0080FF;*/
+color:black;
+
+font-size:14px;
+ -moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+ -webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+ -khtml-border-radius:5px; /* закругл. для браузера Konquerer системы Linux */
+ border-radius: 5px; /* закругление углов для всех, кто понимает */
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0A5B7A', endColorstr='#ffffff');
+background: -moz-linear-gradient(top, #e2e2e2 0%, #dbdbdb 50%, #d1d1d1 51%, #fefefe 100%);
+    background: -webkit-linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+    background: -o-linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+    background: -ms-linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+    background: linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+}
+.nov11 {
+	width: 25%;
+	background-color: #07B8E4;
+	height: 100%;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+
+.nov12 {
+	width: 27%;
+	background-color: #d1d1d1;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov13 {width:97px;	
+/*background-color: #07B8E4;	*/
+height:30px;	
+/*color:#0080FF;*/
+color:black;
+
+font-size:14px;
+ -moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+ -webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+ -khtml-border-radius:5px; /* закругл. для браузера Konquerer системы Linux */
+ border-radius: 5px; /* закругление углов для всех, кто понимает */
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0A5B7A', endColorstr='#ffffff');
+background: -moz-linear-gradient(top, #e2e2e2 0%, #dbdbdb 50%, #d1d1d1 51%, #fefefe 100%);
+    background: -webkit-linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+    background: -o-linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+    background: -ms-linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+    background: linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%);
+}
+.nov13 {
+	width: 20%;
+	background-color: #07B8E4;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov111 {
+	width: 40%;
+	background-color: #07B8E4;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov2 {
+	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov21 {
+	width: 92%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov22 {
+	width: 92%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov23 {
+	width: 92%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov3 {
+	width: 48.2%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov31 {width:152px;	
+background-color:#07B8E4;	
+height:40px;
+/*color:#0080FF;*/
+
+color:black;
+font-size:14px;
+
+ -moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+ -webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+ -khtml-border-radius:5px; /* закругл. для браузера Konquerer системы Linux */
+ border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov210 {width:170px;	
+background-color: #DF0070;;	
+font-weight:bold;
+height:80px;	
+/*color:#0080FF;*/
+color:white;
+font-size:14px;
+ -moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+ -webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+ -khtml-border-radius:5px; /* закругл. для браузера Konquerer системы Linux */
+ border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov2101 {
+	width: 49%;
+	background-color:#07B8E4;;
+	font-weight: bold;
+	height: 80px;
+	/*color:#0080FF;*/
+	color: white;
+	font-size:28px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov2102 {width:170px;	
+background-color: #DF0070;;	
+font-weight:bold;
+height:80px;	
+/*color:#0080FF;*/
+color:white;
+font-size:14px;
+ -moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+ -webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+ -khtml-border-radius:5px; /* закругл. для браузера Konquerer системы Linux */
+ border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov1111 {	width: 40%;
+	background-color: #07B8E4;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov121 {	width: 25%;
+	background-color: #d1d1d1;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov21011 {	width: 49%;
+	background-color:#07B8E4;;
+	font-weight: bold;
+	height: 80px;
+	/*color:#0080FF;*/
+	color: white;
+	font-size:28px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov1112 {	width: 40%;
+	background-color: #07B8E4;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov122 {	width: 25%;
+	background-color: #d1d1d1;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov1113 {	width: 40%;
+	background-color: #07B8E4;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov123 {	width: 27%;
+	background-color: #d1d1d1;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov1114 {	width: 40%;
+	background-color: #07B8E4;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov124 {	width: 27%;
+	background-color: #d1d1d1;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov24 {	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov25 {	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov32 {	width: 48%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov26 {	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov27 {	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov21012 {	width: 49%;
+	background-color:#07B8E4;;
+	font-weight: bold;
+	height: 80px;
+	/*color:#0080FF;*/
+	color: white;
+	font-size:28px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov241 {width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov1115 {	width: 40%;
+	background-color: #07B8E4;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov125 {	width: 27%;
+	background-color: #d1d1d1;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov126 {	width: 27%;
+	background-color: #d1d1d1;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov127 {	width: 27%;
+	background-color: #d1d1d1;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov128 {	width: 45%;
+	background-color: #d1d1d1;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 10px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov1281 {width: 45%;
+	background-color: #d1d1d1;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 10px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov12811 {width: 45%;
+	background-color: #d1d1d1;
+	height: 30px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 10px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov28 {	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov29 {	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov211 {	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov212 {	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov213 {	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov214 {	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov215 {	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov216 {	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov217 {	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov218 {	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov219 {	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov33 {	width: 48.2%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov34 {	width: 48.2%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+
+	color: black;
+	font-size: 12px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov220 {	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov221 {	width: 98%;
+	background-color: #07B8E4;
+	height: 20px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 10px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov221:hover {
+color: white;
+font-weight:bold	
+}
+.nov2211 {width: 98%;
+	background-color: #07B8E4;
+	height: 20px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 10px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov222 {	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov223 {	width: 92%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov224 {	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov225 {	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov226 {	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov227 {	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov228 {	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov229 {	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov230 {	width: 98%;
+	background-color: #07B8E4;
+	height: 40px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov231 {	width: 98%;
+	background-color: #07B8E4;
+	height: 80px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov231:hover {
+color: white;
+font-weight:bold
+}
+.nov2212 {width: 98%;
+	background-color: #07B8E4;
+	height: 20px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 10px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov2311 {width: 98%;
+	background-color: #07B8E4;
+	height: 80px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+
+.nov2311:hover {
+color: white;	
+font-weight:bold	
+}
+.nov23111 {width: 98%;
+	background-color: #07B8E4;
+	height: 80px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+.nov231111 {width: 98%;
+	background-color: #07B8E4;
+	height: 80px;
+	/*color:#0080FF;*/
+	color: black;
+	font-size: 14px;
+	-moz-border-radius: 5px; /* закругление для старых Mozilla Firefox */
+	-webkit-border-radius: 5px; /* закругление для старых Chrome и Safari */
+	-khtml-border-radius: 5px; /* закругл. для браузера Konquerer системы Linux */
+	border-radius: 5px; /* закругление углов для всех, кто понимает */
+}
+</style>
+<!-- 
+Дополнительные сведения об условных комментариях вокруг HTML-тегов в верхней части файла:
+paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
+
+Выполните следующие действия, если вы используете модифицированную сборку modernizr (http://www.modernizr.com/):
+* вставьте здесь ссылку на свой javascript;
+* удалите ссылку ниже на html5shiv;
+* добавьте класс no-js в HTML-теги в верхней части;
+* вы также можете удалить ссылку на respond.min.js, если MQ Polyfill входит в сборку modernizr. 
+-->
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="respond.min.js"></script>
+
+
+	<!-- Add jQuery library -->
+	<script type="text/javascript" src="fancybox/lib/jquery-1.10.1.min.js"></script>
+
+	<!-- Add mousewheel plugin (this is optional) -->
+	<script type="text/javascript" src="fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+
+	<!-- Add fancyBox main JS and CSS files -->
+	<script type="text/javascript" src="fancybox/source/jquery.fancybox.js?v=2.1.5"></script>
+	<link rel="stylesheet" type="text/css" href="fancybox/source/jquery.fancybox.css?v=2.1.5" media="screen" />
+
+	<!-- Add Button helper (this is optional) -->
+	<link rel="stylesheet" type="text/css" href="fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+	<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+
+	<!-- Add Thumbnail helper (this is optional) -->
+	<link rel="stylesheet" type="text/css" href="fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+	<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+	<!-- Add Media helper (this is optional) -->
+	<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox();
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				openEffect : 'none',
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 0
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+			$(".fancybox.iframe").click(function() {
+				$.fancybox.open({
+					//href : 'iframe.html',
+					//type : 'iframe',
+					autosize : true,
+					Width: 1000,
+					Height: 800,
+					minWidth: 1000,
+					minHeight: 800,
+					fitToView: true,
+					padding : 0
+				});
+			});
+
+		});
+	</script>
+<!--	<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>//-->
+	<style type="text/css">
+		a.fancybox, a.fancybox.iframe{text-decoration:none; border:0px; color:#000;}
+		---a.fancybox, a.fancybox.iframe:hover{color:#000;}
+		div.v_kateg_tovar:hover{color:#aaa;}
+	</style>
+
+	</head>
+<body>
+<div class="gridContainer clearfix" >
+  <div id="LayoutDiv1" style="border: 1px solid 
+	#07B8E4;" >
+    <div id="header1" align="center" border="1" >
+    <table width="100%" height="232" border="0">
+      <tr>
+        <td width="1%" height="26" align="right">&nbsp;</td>
+        <td width="74%" height="26" align="center" valign="top">&nbsp;</td>
+<!--         <td width="25%" align="center" valign="top">кабинет<strong> предпринимателя</strong></td>
+ -->      </tr>
+      <tr>
+        <td height="200" colspan="3" align="right"><div id="rec4">
+          <div id="rec5">
+            <table width="100%" height="189" border="0">
+              <tr>
+                <td width="25%" align="center" valign="middle"><img src="i.jpg" alt="1"></td>
+                <td width="25%" align="center"><img src="i.jpg" alt="1"></td>
+                <td width="25%" align="center"><img src="i.jpg" alt="1"></td>
+                <td width="25%" align="center"><img src="i.jpg" alt="1"></td>
+              </tr>
+          </table>
+           
+          </div>
+        </div></td>
+        </tr>
+    </table>
+    
+    <table width="100%" height="84" border="0">
+        <tr>
+          <td width="1%" height="80" align="right">&nbsp;</td>
+          <td width="17%" align="center"><a href="index.html" style="border:0px;"><img src="лог_лог_111.png" alt="логотип"></a></td>
+          <td width="57%" align="center"><table width="100%" border="0">
+            <tr>
+              <td width="57%"><center><input type="text" name="isk2" id="isk2" value="я ищу..." onblur="if(this.value=='') this.value='я ищу...';" onfocus="if(this.value=='я ищу...') this.value='';" style="width:70%;" /></center></td>
+            </tr>
+          </table>
+ 		  <p id="tcms">
+<!--  		  <p id="tcms" style="background:<?php echo $_POST['tcm2'];?>; color:<?php echo $_POST['tcm'];?>;">
+ -->		  <?php
+//				$sql = "update shop s set s.color='".$_POST['tcm']."', s.bcolor='".$_POST['tcm2']."' where id=".$_SESSION['uid'];
+//				$result = mysql_query($sql) or die (mysql_error());
+			?>
+			<font size=5>Добро пожаловать, <strong> <?php echo $_REQUEST['naimen']." &nbsp;&nbsp;&nbsp; ID: ".$_SESSION['uid'];?> </strong></font>
+		  </p>
+		  </td>
+          <td width="27%" valign="bottom"><table width="98%"  border="0">
+            <tr>
+              <td width="25%" height="19" align="right" style="font-size: 12px; color:#07B8E4;">тел.:</td>
+              <td colspan="2" align="left" style="font-size: 12px; color:#07B8E4;"><b>8(3519)<?php echo $_POST['phone'];?><b></td>
+            </tr>
+            <tr>
+              <td height="8" align="right" style="font-size: 12px; color:#07B8E4;">e-mail:</td>
+              <td colspan="2" align="left" style="font-size: 12px; color:#07B8E4;"><a href="mailto:<?php echo $_POST['email'];?>" style="font-size: 12px; color:#07B8E4;letter-spacing: 1px;"> <b><?php echo $_POST['email'];?></b></a></td>
+            </tr>
+            <tr>
+              <td height="9" align="right" style="font-size: 12px; color:#07B8E4;">&nbsp;</td>
+              <td width="43%" align="left" style="font-size: 12px; color:#07B8E4;">&nbsp;</td>
+              <td width="32%" align="left" style="font-size: 12px; color:#07B8E4;"><input type="button" value="Выйти" class="nov221" onclick="window.location='index.html'" /></td>
+            </tr>
+          </table>
+         </td>
+        </tr>
+      </table>
+      <table width="100%" border="0">
+        <tr>
+          <td>&nbsp;</td>
+          <td><input type="button" value="Мои товары(<?php echo $_SESSION['gcnt']; ?> / <?php echo $_SESSION['gsold']; ?>)" class="nov2" onclick="window.location='my_goods.html'" /></td>
+          <td colspan=5 rowspan=4><iframe id="spore" height="100%" width="100%" frameborder="0" src="tov.html"> Ваш браузер не поддерживает iframe!</iframe></td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td><a class="fancybox fancybox.iframe" href="spor.html"><input type="button" value="Споры(0)" class="nov2" onclick="window.location='my_spor.html'" /></a></td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td><a class="fancybox fancybox.iframe" href="to_spor.html"><input type="button" value="Возврат товара(0)" class="nov2" /></a></td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td><a class="fancybox fancybox.iframe" href="to_spor2.html"><input type="button" value="Возврат денег" class="nov2" /></td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+       </tr>
+        <tr>
+          <td width="1%" height="44">&nbsp;</td>
+		  
+		  <?php
+			if (isset($_SESSION['uid']) and $_SESSION['uid']<>"") {
+				$result=mysql_query("
+						select u.id uid, u.name uname, count(m.user_from) mes_cnt
+								/*r.rate rrate*/
+						from shop u
+							/*join ratings r on r.shop_id=u.id*/
+							join messages1 m on m.user_from=u.user_id
+						where u.id = '".$_SESSION['uid']."'
+					") or die (mysql_error());
+				while ($row = mysql_fetch_assoc($result)){
+					$_SESSION['uid']=$row['uid'];
+					$_SESSION['mes_cnt']=$row['mes_cnt'];
+				}
+	}
+
+		  ?>
+		  
+          <td width="18%"><a class="fancybox fancybox.iframe" href="messages.html"><input type="button" value="Мои сообщения(<?php $_SESSION['mes_cnt']; ?>)" class="nov2" onclick="window.location='m2.php'" /></a></td> <!-- mess_address.html -->
+          <td width="5%">&nbsp;</td>
+          <td width="17%" rowspan="3"><img src="<?php echo $_SESSION['ufoto'];?>" width="139" /></td>
+          <td width="32%" align="center"> <span style="color:red; font-size:18px; font-weight:bold;"> <?php //echo round($_POST['rrate']); ?> </span> <img src="r1.png">&nbsp;<img src="r1.png" alt="">&nbsp;<img src="r1.png" alt=""><img src="r2.png">&nbsp;<img src="r2.png"></td>
+          <td width="5%">&nbsp;</td>
+          <td width="22%">&nbsp;<!-- <input type="button" value="Мои товары(<?php echo $_SESSION['gcnt']; ?> / <?php echo $_SESSION['gsold']; ?>)" class="nov2" onclick="window.location='my_goods.html'" /> --></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td><input type="button" value="Мои данные" class="nov2" /></td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;<!-- <a class="fancybox fancybox.iframe" href="spor.html"><input type="button" value="Споры(0)" class="nov2" onclick="window.location='my_spor.html'" /></a> --></td>
+        </tr>
+        <tr>
+          <td height="42">&nbsp;</td>
+          <td><a class="fancybox fancybox.iframe" href="help.html"><input type="button" value="Помощь" class="nov2" /></a></td>
+          <td>&nbsp;</td>
+          <td rowspan="2"><input type="button" value="Добавить товар" class="nov2311" onclick="window.location='Add_product.html'" /></td>
+          <td>&nbsp;</td>
+          <td>&nbsp;<!-- <a class="fancybox fancybox.iframe" href="to_spor.html"><input type="button" value="Возврат товара(0)" class="nov2" /></a> --></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td><a class="fancybox fancybox.iframe" href="delete_page.html"><input type="button" value="Удалить страницу" class="nov2" /></a></td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;<!-- <a class="fancybox fancybox.iframe" href="to_spor2.html"><input type="button" value="Возврат денег" class="nov2" /></a> --></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td colspan="6" rowspan="2" align="center">&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+      </table>
+      <br>
+     <hr width="100%" align=center>
+    </div>
+    <SCRIPT language="javascript" type="text/javascript">
+			<!--
+			function toggle(id){
+			 var d=document.getElementById(id);
+
+			 if (d.style.display == 'block'){d.style.display='none';}
+			 else{d.style.display='block';}
+
+			return false;
+			}
+			//-->
+		</SCRIPT>
+    
+        <div id="osn">
+    <hr></div>
+    
+          <div id="rec2"> 
+            <div id="rec3">
+             
+              
+            </div>
+          </div>
+          <div id="foot1" align=center style="background-color:#07B8E4" ><p >&copy; ИнтерЦУМ</p></div>
+</div>
+</div>
+</body>
+</html>

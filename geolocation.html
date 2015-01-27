@@ -1,0 +1,59 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>HTML5 Geolocation API - Яндекс.Карты</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="http://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU"
+            type="text/javascript"></script>
+<script type="text/javascript">
+        ymaps.ready(init);
+		
+        function init () {
+
+if(navigator.geolocation) {
+
+navigator.geolocation.getCurrentPosition(function(position) {
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;    
+	   
+	            var  myMap = new ymaps.Map("mapContainer", {
+                    center: [latitude,longitude],
+                    zoom: 16
+                }); 
+
+			myMap.controls                
+                .add('zoomControl')                
+                .add('typeSelector')                
+                .add('mapTools');
+				
+		var myPlacemark = new ymaps.Placemark([latitude,longitude], {
+                    }, {
+                        preset: "twirl#redIcon"
+                    });
+                // Добавляем метку в коллекцию
+                myMap.geoObjects.add(myPlacemark);		
+  });
+} else {
+    alert("Geolocation API не поддерживается в вашем браузере");
+}
+
+
+}
+</script>
+
+<link href='http://fonts.googleapis.com/css?family=Vollkorn:700italic,400' rel='stylesheet' type='text/css'>
+
+<link href='maps-style.css' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+	<div id="wrap">
+<h2>HTML5 Geolocation и Яндекс.Карты</h2>
+<div id="mapContainer"></div>
+<p><a href="http://webmap-blog.ru/obzors/ispolzuem-html5-geolocation-api" target="_blank" title="Используем HTML5 Geolocation API">Вернуться к заметке</a></p>
+</div>
+</body>
+</html>

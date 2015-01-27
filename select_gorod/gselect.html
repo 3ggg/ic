@@ -1,0 +1,49 @@
+﻿<script>
+//function gsel(){
+$('#gorod').change(function(){
+ 
+    var country=$('#gorod option:selected').val();
+    getobls();
+ 
+});
+$('#oblst').chnage(function(){
+   var oblst=$('#oblst option:selected');
+  getregion();
+});
+function getobls(){
+    var country=$('#gorod option:selected').val();
+    var obl=$('#oblst');
+    if(country.length==0){
+       obl.attr('disabled',true);
+    }
+    else{
+     obl.attr('disabled',false);
+     }
+}
+function getregion(){
+    var oblst=$('#oblst option:selected').val();
+    var region=$('#region');
+    if(oblst.length==0){
+       region.attr('disabled',true);
+    }
+    else{
+     region.attr('disabled',false);
+     }
+}
+//}
+</script>
+
+<select id='gorod'>
+<option> 1 район города </option>
+<option> n район города </option>
+</select>
+ 
+<select id='oblst'>
+<option> 1 город области </option>
+<option> n город области </option>
+</select>
+ 
+<select id='region'>
+<option> 1 район города </option>
+<option> n район города </option>
+</select>

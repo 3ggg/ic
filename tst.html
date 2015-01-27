@@ -1,0 +1,61 @@
+﻿<!doctype html>
+<html>
+<head>
+<script src="jquery.js"></script>
+
+<!-- <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+ -->
+<!-- <script type="text/javascript" src="fancybox/lib/jquery-1.10.1.min.js"></script>
+ -->
+<style type="text/css">
+	table .c {color:red;}
+	.a .c {color:green;}
+</style>
+
+<!-- <script>
+function r2g(){
+var s = document.createElement("SPAN");        // Create a <button> element
+//var t = document.createTextNode("CLICK ME");       // Create a text node
+//btn.appendChild(t);                                // Append the text to <button>
+s.ClassName="a";
+document.getElementById("t").appendChild(s);
+}
+</script>
+ -->
+ 
+<script>
+function r2g(){
+  var td = document.getElementsByTagName('td')[0]; 
+  td.className = 'a';
+  td.innerHTML = "<div class='c'>" + td.innerHTML + "</div>"; 
+}
+</script>
+
+<head>
+
+<body>
+<table id="t">
+    <tr>
+        <td class="c" onclick="r2g();">Текст</td>
+    </tr>
+<!--     <tr>
+        <td class="c" onclick="this.style.color='green'">Текст</td>
+    </tr>
+ --></table>
+ 
+<!-- <script>
+$(".c").click(function(){
+  var x=document.getElementsByClassName("c")[0];
+  x.style.color="green";
+});
+</script>
+ -->
+
+<!-- <script>
+$(".c").click(function(){
+  $(this).slideUp();
+});
+</script>
+ -->
+</body>
+</html>

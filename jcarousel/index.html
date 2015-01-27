@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>jCarousel</title>
+<link rel="stylesheet" type="text/css" media="all" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
+<script type="text/javascript">
+jQuery(function() {
+
+	$.fn.startCarousel = function() {
+  		var bodywidth = $('body').width(),
+			itemwidth = $('.mycarousel li').outerWidth(true),		
+			mycontwidth = bodywidth > itemwidth ? bodywidth - bodywidth%itemwidth : itemwidth,
+			licount = $('.mycarousel li').size(),
+			jscroll = 1;
+			
+		if(licount > mycontwidth/itemwidth){
+			jscroll =  mycontwidth/itemwidth;
+		} else {
+			jscroll = 0;
+			mycontwidth = licount * itemwidth;
+		}
+		
+		$('.mycont').width(mycontwidth);
+			
+    	$('.mycarousel').jcarousel({
+			scroll:jscroll
+		});
+  	};
+	
+	$(this).startCarousel();
+	
+	$(window).resize(function(){
+		$(this).startCarousel();
+	}); 
+	
+	$('.mycarousel').jcarousel({
+		scroll:2
+	});
+});
+</script>
+</head>
+
+<body>
+	<div class="mycont">
+		<ul class="mycarousel">
+    		<li><img width="200" height="250" alt="" src="images/flowers/01.jpg"></li>
+	    	<li><img width="200" height="250" alt="" src="images/flowers/02.jpg"></li>
+	    	<li><img width="200" height="250" alt="" src="images/flowers/03.jpg"></li>
+	    	<li><img width="200" height="250" alt="" src="images/flowers/04.jpg"></li>
+	    	<li><img width="200" height="250" alt="" src="images/flowers/05.jpg"></li>
+	    	<li><img width="200" height="250" alt="" src="images/flowers/06.jpg"></li>
+	    	<li><img width="200" height="250" alt="" src="images/flowers/07.jpg"></li>
+	    	<li><img width="200" height="250" alt="" src="images/flowers/08.jpg"></li>
+	    	<li><img width="200" height="250" alt="" src="images/flowers/09.jpg"></li>
+	    	<li><img width="200" height="250" alt="" src="images/flowers/10.jpg"></li>
+	    	<li><img width="200" height="250" alt="" src="images/flowers/11.jpg"></li>
+	    	<li><img width="200" height="250" alt="" src="images/flowers/12.jpg"></li>
+	    	<li><img width="200" height="250" alt="" src="images/flowers/13.jpg"></li>
+	    	<li><img width="200" height="250" alt="" src="images/flowers/14.jpg"></li>
+	    	<li><img width="200" height="250" alt="" src="images/flowers/15.jpg"></li>
+	    	<li><img width="200" height="250" alt="" src="images/flowers/16.jpg"></li>
+	    	<li><img width="200" height="250" alt="" src="images/flowers/17.jpg"></li>
+	  	</ul>
+		<div style="clear:both;padding:20px 0 0">
+			<a href="jcarousel.zip" title="Скачать пример">Скачать пример</a><br />
+			<a href="http://infa.kharkov.ua/" title="На главную страницу сайта infa.kharkov.ua">На главную страницу сайта</a>
+		</div>
+	</div>	
+</body>

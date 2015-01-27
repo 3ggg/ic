@@ -1,0 +1,70 @@
+.dialogs_m{
+width:50%;
+height:80px;
+
+border:#EBEBF9 solid 1px; 
+margin: 0 25% 0 25%;
+text-align:right;
+
+}
+
+
+.dialogs_m1{
+width:50%;
+height:70px;
+
+border:#EBEBF9 solid 1px; 
+margin: 0 25% 0 25%;
+text-align:right;
+
+}
+#other_mess{
+width:50%;
+margin: 0 25% 0 25%;
+text-align:center;
+color:gray;
+
+}
+
+#all_mess{
+vertical-align:bottom;
+
+}
+
+#content1 {
+height:460px;
+overflow-y:auto;	
+ 
+
+}
+.dialogs_m:hover{
+	background:#EBEBF9;
+	cursor: pointer;
+	}
+
+
+.dialogs_m1:hover{
+	background:#EBEBF9;
+	cursor: pointer;
+	}
+.del_dial{
+	
+color:white;
+text-decoration:blink;
+cursor: pointer;
+
+}
+
+
+
+.del_dial:hover{
+	
+color:#121EFC;
+	
+}
+
+.td2{
+
+background:#EBEBF9
+
+}

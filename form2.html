@@ -1,0 +1,27 @@
+﻿	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src="jquery-pack.js"></script>
+	<script src="jquery.js"></script>
+
+<script type="text/javascript">
+function sbm() {
+$.post(url, $('#x').serialize(), function (response) {
+switch (response) {
+// Если ответ равен '404 error'
+case '404 error': $('#err').html('Страница не найдена'); break;
+// Если ответ равен 'OK'
+case 'ok': $('#err').html('Всё ок'); break;
+// Можно продолжать прописывать условия дальше. Только не забывайте про break.
+}
+});
+}
+</script>
+ 
+<div id="err"> Идёт загрузка… </div>
+ 
+<form id="x">
+
+ Ваша форма 
+<br> 
+<input type="submit" value="Проверить" onsubmit="sbm();" />
+
+</form>

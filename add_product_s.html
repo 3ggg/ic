@@ -1,0 +1,149 @@
+﻿ <?php
+	
+	$host="localhost";
+	$user="root";
+	$password="";
+	$db="intercum08";
+	$a=mysql_connect($host, $user, $password) or die("MySQL сервер недоступен!".mysql_error());
+	mysql_select_db($db) or die("Нет соединения с БД".mysql_error());
+
+	
+$gname_v="";
+$color1_v=""; $color2_v=""; $color3_v="";
+$size1_v=""; $size2_v=""; $size3_v="";
+$complect1_v=""; $complect2_v=""; $complect3_v="";
+$price1_v=""; $price2_v=""; $price3_v="";
+
+if (isset($_REQUEST["color1"]) or isset($_REQUEST["size1"]) or isset($_REQUEST["complect1"])) {
+
+if ($_REQUEST["color1"]<>"" or $_REQUEST["size1"]<>""){
+
+$gname_v=$_REQUEST["gname"];
+$color1_v=$_REQUEST["color1"];
+$size1_v=$_REQUEST["size1"];
+$complect1_v=$_REQUEST["complect1"];
+
+}
+else {
+
+echo("Добавьте цвет/размер/комплект товара!");
+die();
+
+}
+
+}
+if (isset($_REQUEST["color2"]) or isset($_REQUEST["size2"]) or isset($_REQUEST["complect2"])) {
+
+if ($_REQUEST["color2"]<>"" or $_REQUEST["size2"]<>""){
+
+$color2_v=$_REQUEST["color2"];
+$size2_v=$_REQUEST["size2"];
+$complect2_v=$_REQUEST["complect2"];
+
+}
+else {
+
+echo("Добавьте цвет/размер/комплект товара!");
+die();
+
+}
+
+}
+if (isset($_REQUEST["color3"]) or isset($_REQUEST["size3"]) or isset($_REQUEST["complect3"])) {
+
+if ($_REQUEST["color3"]<>"" or $_REQUEST["size3"]<>""){
+
+$color3_v=$_REQUEST["color3"];
+$size3_v=$_REQUEST["size3"];
+$complect3_v=$_REQUEST["complect3"];
+
+}
+else {
+
+echo("Добавьте цвет/размер/комплект товара!");
+die();
+
+}
+
+}
+
+if (isset($_REQUEST["price1"])) {
+
+if ($_REQUEST["price1"]<>""){
+
+$price1_v=$_REQUEST["price1"];
+
+mysql_query ("INSERT INTO goods (name, user_id, description, start_time, descr_change_time, color, complect, price) VALUES ('$gname_v', '2', 'qwerty', now(), now(), '$color1_v', '$complect1_v', '$price1_v')");
+
+
+echo "<br>".$gname_v." успешно добавлен!<br> Цвет: ".$color1_v."<br>Комплект: ".$complect1_v."<br> Цена: ".$price1_v." руб.";
+
+}
+else {
+
+echo("Добавьте цену товара!");
+die();
+
+}
+
+}
+
+if (isset($_REQUEST["price2"])) {
+
+if ($_REQUEST["price2"]<>""){
+
+$price2_v=$_REQUEST["price2"];
+
+mysql_query ("INSERT INTO goods (name, user_id, description, start_time, descr_change_time, color, complect, price) VALUES ('$gname_v', '2', 'qwerty', now(), now(), '$color2_v', '$complect2_v', '$price2_v')");
+
+
+echo "<br>".$gname_v." успешно добавлен!<br> Цвет: ".$color2_v."<br>Комплект: ".$complect2_v."<br> Цена: ".$price2_v." руб.";
+
+}
+else {
+
+echo("Добавьте цену товара!");
+die();
+
+}
+
+}
+
+if (isset($_REQUEST["price3"])) {
+
+if ($_REQUEST["price3"]<>""){
+
+$price3_v=$_REQUEST["price3"];
+
+mysql_query ("INSERT INTO goods (name, user_id, description, start_time, descr_change_time, color, complect, price) VALUES ('$gname_v', '2', 'qwerty', now(), now(), '$color3_v', '$complect3_v', '$price3_v')");
+
+
+echo "<br>".$gname_v." успешно добавлен!<br> Цвет: ".$color3_v."<br>Комплект: ".$complect3_v."<br> Цена: ".$price3_v." руб.";
+
+}
+else {
+
+echo("Добавьте цену товара!");
+die();
+
+}
+
+}
+
+
+$a.close;
+
+?>
+
+<html>
+	<head>
+		<META HTTP-EQUIV="REFRESH" CONTENT="0;URL=http://intercum.ru/my_goods.html">
+	</head>
+	<body>
+		<div>
+			<p>
+				1
+			</p>
+		</div>
+	</body>
+</html>

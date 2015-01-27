@@ -1,0 +1,936 @@
+﻿<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+
+<head>
+
+<!-- <script>jq_13 = jQuery.noConflict(true);</script>
+<script>jq_1101 = jQuery.noConflict(true);</script>
+<script>jq_172 = jQuery.noConflict(true);</script>
+<script>jq_182 = jQuery.noConflict(true);</script>
+ -->
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+ <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+ <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+ <meta charset="utf8">
+ <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Единая торговая площадка ИнтерЦУМ</title>
+<link href="boilerplate.css" rel="stylesheet" type="text/css">
+<link href="inter.css" rel="stylesheet" type="text/css">
+<link href="styles.css" rel="stylesheet" type="text/css">
+<link href="side_panel.css" rel="stylesheet" type="text/css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js" type="text/javascript"></script>
+<!-- <script src="jquery.tabslideout.v1.2.js"></script> -->
+
+<!-- side panel begin -->
+<script>
+$(function(){
+ $('.slide-out-div').tabSlideOut({
+  tabHandle: '.handle',                                  /*класс элемента вкладки*/
+  //pathToTabImage: 'http://www.snapsnap.ru/i/cnccnc.png', /*путь к изображению "обязательно"*/ 
+  imageHeight: '100px',                                  /*высота изображения "обязательно"*/
+  imageWidth: '25px',                                    /*ширина изображения "обязательно"*/
+  tabLocation: 'right',                                  /*сторона на которой будет вкладка top, right, bottom, или left*/
+  speed: 100,                                            /*скорость анимации*/
+  action: 'click',                                       /*опции=:'click'или'hover', анимация при нажатии или наведении*/
+  topPos: '40px',                                        /*расположение от верхнего края/ использовать если tabLocation = left или right*/
+  leftPos: '20px',                                       /*расположение от левого края/ использовать если tabLocation = bottom или top*/
+  fixedPosition: true                                    /*опции: false сделает данную вкладку прокручивающуюся при скролле*/
+   });
+});
+</script>
+<!-- side panel end -->
+
+<!-- 
+Дополнительные сведения об условных комментариях вокруг HTML-тегов в верхней части файла:
+paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
+
+Выполните следующие действия, если вы используете модифицированную сборку modernizr (http://www.modernizr.com/):
+* вставьте здесь ссылку на свой javascript;
+* удалите ссылку ниже на html5shiv;
+* добавьте класс no-js в HTML-теги в верхней части;
+* вы также можете удалить ссылку на respond.min.js, если MQ Polyfill входит в сборку modernizr. 
+-->
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="respond.min.js"></script>
+
+
+	<!-- Add $ library -->
+	<script type="text/javascript" src="fancybox/lib/jquery-1.10.1.min.js"></script>
+
+	<!-- Add mousewheel plugin (this is optional) -->
+	<script type="text/javascript" src="fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+
+	<!-- Add fancyBox main JS and CSS files -->
+	<script type="text/javascript" src="fancybox/source/jquery.fancybox.js?v=2.1.5"></script>
+	<link rel="stylesheet" type="text/css" href="fancybox/source/jquery.fancybox.css?v=2.1.5" media="screen" />
+
+	<!-- Add Button helper (this is optional) -->
+	<link rel="stylesheet" type="text/css" href="fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+	<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+
+	<!-- Add Thumbnail helper (this is optional) -->
+	<link rel="stylesheet" type="text/css" href="fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+	<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+	<!-- Add Media helper (this is optional) -->
+	<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox();
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				openEffect : 'none',
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 0
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+			$(".fancybox.iframe").click(function() {
+				$.fancybox.open({
+					//href : 'iframe.html',
+					//type : 'iframe',
+					autosize : true,
+					Width: 1000,
+					Height: 800,
+					minWidth: 1000,
+					minHeight: 800,
+					fitToView: true,
+					padding : 0
+				});
+			});
+
+		});
+	</script>
+<!--	<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>//-->
+	
+<!-- 	<link rel="stylesheet" href="noobslide/style.css" type="text/css" media="screen" />
+ 	<script type="text/javascript" src="noobslide/mootools-1.2-core.js"></script>
+	<script type="text/javascript" src="noobslide/_class.noobSlide.packed.js"></script>
+ -->
+     <script type="text/javascript">
+		function toggl()
+		{
+			var rchb=document.getElementById('reg_chb'); //echo reg_chb;
+			var rpwd2=document.getElementById('pwd2'); //echo rpwd2;
+			var lpwd2=document.getElementById('l_pwd2'); //echo rpwd2;
+			
+			if(rchb.value=='no')
+				{
+				rpwd2.style.visibility='hidden'; lpwd2.style.visibility='hidden'; rchb.value='yes';
+			}else{
+				rpwd2.style.visibility='visible'; lpwd2.style.visibility='visible'; rchb.value='no';
+			}
+			return false;
+		}
+	</script>
+	
+ 
+	<script type="text/javascript" src="jquery.js"></script>
+
+ 
+ <!-- Autocomplete -->
+	<script type="text/javascript" src="jquery.autocomplete.js"></script>
+
+	<link href="easy_slider/css/screen.css" rel="stylesheet" type="text/css" media="screen" />
+	<script type="text/javascript" src="easy_slider/js/jquery.js"></script>
+	<script type="text/javascript" src="easy_slider/js/easySlider1.7.js"></script>
+
+	</head>
+
+<body>
+<a href="#" id="top"></a>
+
+<!-- <div style="top:0px; left:0px; position:absolute; z-index:1000; width:1380px; height:1380px; opacity:0.5; filter: alpha(opacity=50, style=0); background-color: rgb(100,100,100);" onload="document.getElementById('osn').style.color=transparent; document.getElementById('osn').style.background=transparent; document.getElementById('osn').style.textShadow='#000 0 0 5px';">
+	<p style="color: rgb(0,0,0);">Filter Alpha Style 0</p>
+</div>
+
+<style>
+#osn, #rec1, #LayoutDiv1 {
+    color: rgba(0,0,0,0);
+    text-shadow: black 0 0 0;
+}
+</style>
+ -->
+ 
+<!-- <style>
+.gridContainer{
+    -webkit-filter: blur(1px);
+    -ms-filter: blur(1px);
+    -moz-filter: blur(1px);
+    -o-filter: blur(1px);
+    filter: blur(1px);
+    filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='blur'><feGaussianBlur stdDeviation='1'/></filter></svg>#blur");
+}
+</style>
+ -->
+<div class="gridContainer clearfix" >
+  <div id="LayoutDiv1" style="border: 1px solid #07B8E4;" >
+    <div id="header1" align="center" border="1" >
+    <br>
+      <table width="91%" height="93" border="0">
+        <tr>
+          <td width="16%" height="89" align="right">&nbsp;</td>
+          <td width="17%" align="center"><a href="index.html" style="border:0px;"><img src="лог_лог_11.png" alt="логотип"></a></td>
+          <td width="40%" align="center"><div style="font-size: 10px; color: #DF0070; letter-spacing: 5px;" align="center"> ЕДИНАЯ ТОРГОВАЯ ПЛОЩАДКА</div>
+          <div align="center" style="font-size: 50px; color:#07B8E4;"><b>ИнтерЦУМ</b></div></td>
+          <td width="27%" valign="bottom"><table width="98%"  border="0">
+            <tr>
+              <td height="20" colspan="2" align="right">&nbsp;</td>
+            </tr>
+            <tr>
+              <td height="19" align="right" style="font-size: 12px; color:#07B8E4;">тел.:</td>
+              <td align="left" style="font-size: 12px; color:#07B8E4;"><b>8(3519)47-40-17<b></td>
+            </tr>
+            <tr>
+              <td height="19" align="right" style="font-size: 12px; color:#07B8E4;">e-mail:</td>
+              <td align="left" style="font-size: 12px; color:#07B8E4;"><a href="mailto:intecum@mail.ru" style="font-size: 12px; color:#07B8E4;letter-spacing: 1px;"> <b>intercum@mail.ru</b></a></td>
+            </tr>
+          </table>
+         </td>
+        </tr>
+      </table>
+      <br>
+     <hr width="100%" align=center>
+    </div>
+
+	<script src="nbslide_declare.js"></script>
+
+<!-- 	
+	<script type="text/javascript">
+	window.addEvent('domready',function(){
+		//SAMPLE 5 (mode: vertical, using "onWalk" )
+		var info2 = $('info2').set('opacity',0.5);
+		var sampleObjectItems =[
+			{title:'Morbi elementum', autor:'Lorem', date:'5 Jun 2007', link:'http://www.link1.com'},
+			{title:'Mollis leo', autor:'Ipsum', date:'6 Dic 2007', link:'http://www.link2.com'},
+			{title:'Nunc adipiscing', autor:'Dolor', date:'9 Feb 2007', link:'http://www.link3.com'},
+		];
+		var nS2 = new noobSlide({
+			autoPlay: true,
+			interval: 3000,
+			mode: 'vertical',
+			box: $('box2'),
+			size: 150,
+			items: sampleObjectItems,
+			addButtons: {
+				previous: $('prev2'),
+				play: $('play2'),
+				stop: $('stop2'),
+				next: $('next2')
+			},
+			onWalk: function(currentItem){
+				info2.empty();
+				new Element('h4').set('html','<a href="'+currentItem.link+'">link</a>'+currentItem.title).inject(info2);
+				new Element('p').set('html','<b>Autor</b>: '+currentItem.autor+' &nbsp; &nbsp; <b>Date</b>: '+currentItem.date).inject(info2);
+			}
+		});
+	});
+	</script>
+
+	
+	<script type="text/javascript">
+	window.addEvent('domready',function(){
+		//SAMPLE 5 (mode: vertical, using "onWalk" )
+		var info3 = $('info3').set('opacity',0.5);
+		var sampleObjectItems =[
+			{title:'Morbi elementum', autor:'Lorem', date:'5 Jun 2007', link:'http://www.link1.com'},
+			{title:'Mollis leo', autor:'Ipsum', date:'6 Dic 2007', link:'http://www.link2.com'},
+			{title:'Nunc adipiscing', autor:'Dolor', date:'9 Feb 2007', link:'http://www.link3.com'},
+		];
+		var nS3 = new noobSlide({
+			autoPlay: true,
+			interval: 3000,
+			mode: 'vertical',
+			box: $('box3'),
+			size: 150,
+			items: sampleObjectItems,
+			addButtons: {
+				previous: $('prev3'),
+				play: $('play3'),
+				stop: $('stop3'),
+				next: $('next3')
+			},
+			onWalk: function(currentItem){
+				info3.empty();
+				new Element('h4').set('html','<a href="'+currentItem.link+'">link</a>'+currentItem.title).inject(info3);
+				new Element('p').set('html','<b>Autor</b>: '+currentItem.autor+' &nbsp; &nbsp; <b>Date</b>: '+currentItem.date).inject(info3);
+			}
+		});
+	});
+	</script>
+
+	
+	<script type="text/javascript">
+	window.addEvent('domready',function(){
+		//SAMPLE 5 (mode: vertical, using "onWalk" )
+		var info4 = $('info4').set('opacity',0.5);
+		var sampleObjectItems =[
+			{title:'Morbi elementum', autor:'Lorem', date:'5 Jun 2007', link:'http://www.link1.com'},
+			{title:'Mollis leo', autor:'Ipsum', date:'6 Dic 2007', link:'http://www.link2.com'},
+			{title:'Nunc adipiscing', autor:'Dolor', date:'9 Feb 2007', link:'http://www.link3.com'},
+		];
+		var nS5 = new noobSlide({
+			autoPlay: true,
+			interval: 3000,
+			mode: 'vertical',
+			box: $('box5'),
+			size: 150,
+			items: sampleObjectItems,
+			addButtons: {
+				previous: $('prev5'),
+				play: $('play5'),
+				stop: $('stop5'),
+				next: $('next5')
+			},
+			onWalk: function(currentItem){
+				info4.empty();
+				new Element('h4').set('html','<a href="'+currentItem.link+'">link</a>'+currentItem.title).inject(info4);
+				new Element('p').set('html','<b>Autor</b>: '+currentItem.autor+' &nbsp; &nbsp; <b>Date</b>: '+currentItem.date).inject(info4);
+			}
+		});
+	});
+	</script>
+ -->
+    <div id="rec1">
+      <table width="100%" height="189" border="0">
+        <tr>
+<!--           <td width="25%" align="center" valign="middle"><img src="lancer.jpg"></td>
+ -->
+			 <td width="25%">
+				<div id="slider">
+					<ul>				
+						<li><a href="#"><img src="lancer.jpg" alt="Preview" /></a></li>
+						<li><a href="#"><img src="lancer.jpg" alt="Preview" /></a></li>
+						<li><a href="#"><img src="lancer.jpg" alt="Preview" /></a></li>
+						<li><a href="#"><img src="lancer.jpg" alt="Preview" /></a></li>
+						<li><a href="#"><img src="lancer.jpg" alt="Preview" /></a></li>			
+					</ul>
+				</div>
+			</td>
+			
+			 <td width="25%">
+				<div id="slider2">
+					<ul>				
+						<li><a href="#"><img src="lancer.jpg" alt="Preview" /></a></li>
+						<li><a href="#"><img src="lancer.jpg" alt="Preview" /></a></li>
+						<li><a href="#"><img src="lancer.jpg" alt="Preview" /></a></li>
+						<li><a href="#"><img src="lancer.jpg" alt="Preview" /></a></li>
+						<li><a href="#"><img src="lancer.jpg" alt="Preview" /></a></li>			
+					</ul>
+				</div>
+			</td>
+			 <td width="25%">
+				<div id="slider3">
+					<ul>				
+						<li><a href="#"><img src="lancer.jpg" alt="Preview" /></a></li>
+						<li><a href="#"><img src="lancer.jpg" alt="Preview" /></a></li>
+						<li><a href="#"><img src="lancer.jpg" alt="Preview" /></a></li>
+						<li><a href="#"><img src="lancer.jpg" alt="Preview" /></a></li>
+						<li><a href="#"><img src="lancer.jpg" alt="Preview" /></a></li>			
+					</ul>
+				</div>
+			</td>
+			
+			 <td width="25%">
+				<div id="slider4">
+					<ul>				
+						<li><a href="#"><img src="lancer.jpg" alt="Preview" /></a></li>
+						<li><a href="#"><img src="lancer.jpg" alt="Preview" /></a></li>
+						<li><a href="#"><img src="lancer.jpg" alt="Preview" /></a></li>
+						<li><a href="#"><img src="lancer.jpg" alt="Preview" /></a></li>
+						<li><a href="#"><img src="lancer.jpg" alt="Preview" /></a></li>			
+					</ul>
+				</div>
+			</td>
+			
+        </tr>
+      </table>
+    </div>
+    
+  
+    
+        <div id="osn">
+		
+
+<script>
+
+$(function(){
+ $('.slide-out-div').tabSlideOut({
+  tabHandle: '.handle',                                  /*класс элемента вкладки*/
+  pathToTabImage: 'http://www.snapsnap.ru/i/cnccnc.png', /*путь к изображению "обязательно"*/ 
+  imageHeight: '100px',                                  /*высота изображения "обязательно"*/
+  imageWidth: '25px',                                    /*ширина изображения "обязательно"*/
+  tabLocation: 'right',                                  /*сторона на которой будет вкладка top, right, bottom, или left*/
+  speed: 500,                                            /*скорость анимации*/
+  action: 'click',                                       /*опции=:'click'или'hover', анимация при нажатии или наведении*/
+  topPos: '40px',                                        /*расположение от верхнего края/ использовать если tabLocation = left или right*/
+  leftPos: '20px',                                       /*расположение от левого края/ использовать если tabLocation = bottom или top*/
+  fixedPosition: true                                    /*опции: false сделает данную вкладку прокручивающуюся при скролле*/
+   });
+});
+</script>
+
+		 <form name="f2" id="f2" action="customer_prod.html" method="post">
+          <table width="100%" border="0" cellpadding=0 cellspacing=4>
+           <tr>
+             <td width="74%" rowspan="4"><table width="100%" border="0">
+               <tr>
+                 <td width="22%">&nbsp;</td>
+                 <td width="23%" align="right"><!-- товары
+                   <label>
+                     <input type="checkbox" name="checkbox4" id="checkbox" checked="checked" />
+                 </label> --></td>
+                 <td width="22%" align="right" valign="top"><!-- услуги
+                   <label>
+                     <input type="checkbox" name="checkbox" id="checkbox2" checked="checked" />
+                   </label> --></td>
+                 <td width="22%">&nbsp;</td>
+               </tr>
+               <tr>
+                 <td align="right">
+<!-- 				  <select name="town3" id="town3">
+                   <option> Мой город</option>
+                  </select>
+                   <select name="town" id="town4">
+                     <option>Каталог</option>
+                   </select>
+ -->				 
+					<input type="button" value="Мой город" class="nov111" style="width:100px; height:25px;" />
+					<input type="button" value="Каталог" class="nov111" style="width:100px; height:25px;" onclick="location='change_tovart.html';" />
+				 </td>
+                 <td colspan="4"> <!-- name="isk2" id="isk2" -->
+					<input type="text" name="country" id="autocomplete-dynamic" value="я ищу..." onblur="if(this.value=='') this.value='я ищу...';" onfocus="if(this.value=='я ищу...') this.value='';" onsubmit="<?php echo $_SESSION['isk2_v']=$_REQUEST['country'];?>;" style="width:680px; height:45px; background:silver;" />
+					<input type=button style="background-image:url('search_tool6.png'); width:45px; height:46px; border:0px solid #07B8E4; vertical-align:bottom;" onclick="f2.submit();">
+				 </td>
+				 
+               </tr>
+               <tr>
+                 <td height="23">&nbsp;</td>
+                 <td align="left"><!-- товары -->
+                   <label>
+<!--                      <input type="checkbox" name="checkbox2" id="checkbox7"  checked="checked" />
+ -->                 </label>
+				 <span style="float:right;"><!-- услуги -->
+                   <label>
+<!--                      <input type="checkbox" name="checkbox3" id="checkbox8" checked="checked" />
+ -->                 </label></span></td>
+<!--                  <td align="right"></td>
+ -->                 <td align="right"><!-- по цене -->
+                   <label>
+<!--                      <input type="checkbox" name="checkbox2" id="checkbox7" />
+ -->                 </label>
+				 <span style="float:right; margin-left:43px;"><!-- б/у -->
+                   <label>
+<!--                      <input type="checkbox" name="checkbox2" id="checkbox7" />
+ -->                 </label></span></td>
+                 <td align="right"><!-- по реализации -->
+                   <label>
+<!--                      <input type="checkbox" name="checkbox3" id="checkbox8" checked="checked" />
+ -->                 </label></td>
+                 <td>&nbsp;</td>
+               </tr>
+             </table></td>
+             <td width="26%" height="31" align="right" valign="bottom">&nbsp;</td>
+           </tr>
+           <tr>
+             <td width="26%" height="10" align="right" valign="bottom"><input type="button" value="Кабинет" class="nov12" onclick="window.location='pred_kab2.html'" />
+               <input type="button" value="Корзина" class="nov12" onclick="window.location='korzina.html'" />
+             <input type="button" value="Регистрация" class="nov111" id="reg_min" /></td>  <!-- onclick="window.location='reg_min.html'" -->
+            </tr>
+           <tr>
+             <td width="26%" height="46" align="right" valign="bottom"><input type="button" onclick="window.open('rabota_site.html', '', 'Toolbar=1, Location=0, Directories=0, Status=0, Menubar=0, Scrollbars=0, Resizable=0, Width=600, Height=500');" value="Работа с сайтом" class="nov2" /></td>
+            </tr>
+           <tr>
+             <td rowspan="2" align="right" valign="bottom"><input type="button" onclick="window.open('zaschita.html', '', 'Toolbar=1, Location=0, Directories=0, Status=0, Menubar=0, Scrollbars=0, Resizable=0, Width=600, Height=500');" value="Защита покупателя" class="nov2" /></td>
+           </tr>
+           <tr>
+             <td rowspan="2" align="center">
+				Защита покупателя: <img src="rezervs.png" alt="Резервация средств" title="Резервация средств" height="25" style="height:25px; margin-left:10px;" onclick="window.open('rezerv_money_cond.html', '', 'Toolbar=1, Location=0, Directories=0, Status=0, Menubar=0, Scrollbars=0, Resizable=0, Width=600, Height=500');" />
+									<img src="vozvrat.png" alt="Возврат товара" title="Возврат товара" height="30" style="height:30px; margin-left:10px;" onclick="window.open('vozvrat_tovar_cond.html', '', 'Toolbar=1, Location=0, Directories=0, Status=0, Menubar=0, Scrollbars=0, Resizable=0, Width=600, Height=500');" />
+									<img src="torg.png" alt="Торг" title="Торг" height="20" style="height:20px; margin-left:10px;" onclick="window.open('torg_cond.html', '', 'Toolbar=1, Location=0, Directories=0, Status=0, Menubar=0, Scrollbars=0, Resizable=0, Width=600, Height=500');" />
+			 </td>
+            </tr>
+           <tr>
+             <td height="40" align="right" valign="bottom"><input type="button" onclick="window.open('dostavka.html', '', 'Toolbar=1, Location=0, Directories=0, Status=0, Menubar=0, Scrollbars=0, Resizable=0, Width=600, Height=500');" value="Доставка" class="nov3" />
+             <input type="button" onclick="window.open('oplata.html', '', 'Toolbar=1, Location=0, Directories=0, Status=0, Menubar=0, Scrollbars=0, Resizable=0, Width=600, Height=500');" value="Оплата" class="nov3" /></td>
+           </tr>
+           <tr>
+             <td rowspan="2" align="right" valign="bottom"><input type="button" value="Подать объявление" class="nov2101" onclick="window.location='registration_fiz.html';" />
+             <input type="button" value="Создать сайт" class="nov2101" onclick="window.location='registration.html';" /></td>
+             <td height="43" align="right" valign="bottom"><input type="button" onclick="window.open('contacts.html', '', 'Toolbar=1, Location=0, Directories=0, Status=0, Menubar=0, Scrollbars=0, Resizable=0, Width=600, Height=700');" value="Наши контакты" class="nov2" /></td>
+           </tr>
+           <tr>
+             <td height="40" align="right" valign="bottom"><input type="button" value="Оставить отзыв" class="nov2" /></td>
+           </tr>
+          </table>
+		 </form>
+    <hr></div>
+          <div id="rec2"> 
+            <div id="rec3">
+              <table width="100%" height="189" border="0">
+                <tr>
+			
+			 <td width="25%">
+			 <div class="sample" style="margin-left:10px;">
+				<div class="mask2">
+					<div id="box5">
+						<span><img src="lancer.jpg" alt="Photo" /></span>
+						<span><img src="lancer.jpg" alt="Photo" /></span>
+						<span><img src="lancer.jpg" alt="Photo" /></span>
+					</div>
+					<div id="info5" class="info"></div>
+				</div>
+				<p class="buttons">
+					<span id="prev5"><!-- &lt;&lt; Previous --></span>
+					<span id="play5"><!-- Play &gt; --></span>
+					<span id="stop5"><!-- Stop --></span>
+					<span id="next5"><!-- Next &gt;&gt; --></span>
+				</p>
+			</div>
+			</td>
+			
+			 <td width="25%">
+			 <div class="sample" style="margin-left:10px;">
+				<div class="mask2">
+					<div id="box6">
+						<span><img src="lancer.jpg" alt="Photo" /></span>
+						<span><img src="lancer.jpg" alt="Photo" /></span>
+						<span><img src="lancer.jpg" alt="Photo" /></span>
+					</div>
+					<div id="info6" class="info"></div>
+				</div>
+				<p class="buttons">
+					<span id="prev6"><!-- &lt;&lt; Previous --></span>
+					<span id="play6"><!-- Play &gt; --></span>
+					<span id="stop6"><!-- Stop --></span>
+					<span id="next6"><!-- Next &gt;&gt; --></span>
+				</p>
+			</div>
+			</td>
+			
+			 <td width="25%">
+			 <div class="sample" style="margin-left:10px;">
+				<div class="mask2">
+					<div id="box7">
+						<span><img src="lancer.jpg" alt="Photo" /></span>
+						<span><img src="lancer.jpg" alt="Photo" /></span>
+						<span><img src="lancer.jpg" alt="Photo" /></span>
+					</div>
+					<div id="info7" class="info"></div>
+				</div>
+				<p class="buttons">
+					<span id="prev7"><!-- &lt;&lt; Previous --></span>
+					<span id="play7"><!-- Play &gt; --></span>
+					<span id="stop7"><!-- Stop --></span>
+					<span id="next7"><!-- Next &gt;&gt; --></span>
+				</p>
+			</div>
+			</td>
+			
+			 <td width="25%">
+			 <div class="sample" style="margin-left:10px;">
+				<div class="mask2">
+					<div id="box8">
+						<span><img src="lancer.jpg" alt="Photo" /></span>
+						<span><img src="lancer.jpg" alt="Photo" /></span>
+						<span><img src="lancer.jpg" alt="Photo" /></span>
+					</div>
+					<div id="info8" class="info"></div>
+				</div>
+				<p class="buttons">
+					<span id="prev8"><!-- &lt;&lt; Previous --></span>
+					<span id="play8"><!-- Play &gt; --></span>
+					<span id="stop8"><!-- Stop --></span>
+					<span id="next8"><!-- Next &gt;&gt; --></span>
+				</p>
+			</div>
+			</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div id="foot1" align=center style="background-color:#07B8E4" ><p >&copy; ИнтерЦУМ</p></div>
+</div>
+</div>
+
+<style>
+   .bshadow {
+    background: #fc0; /* Цвет фона */
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.5); /* Параметры тени */
+    padding: 10px;
+   }
+</style>
+
+<div class="bshadow" id="treb" style="display:none; background:white;border:dotted #0080FF; width:275px; font-size:10px; margin-left:425px; margin-top:45px;">
+
+   <table border=0 width=100% style="font-size:10px;"><tr><td align=right><b style="margin-top:-20px;"><font size=4 id="close_treb" style="cursor:pointer;" > x </font></b></td></tr></table>    
+      <table width="98%" height="81" border="0" style="font-size:10px;">
+        <tr>
+          <td width="64%" height="77" align="center" valign="top" style="font-size: 20px; color:#07B8E4;" >
+            <table width="100%" border="0" style="font-size:12px;">
+              <tr>
+                <td colspan="3" align="center">Регистрация</td>
+                </tr>
+              <tr>
+                <td width="34%">Имя пользователя</td>
+                <td width="32%"><label for="user_name"></label>
+                  <input type="text" name="user_name" id="user_name"></td>
+                <td width="34%">&nbsp;</td>
+              </tr>
+              <tr>
+                <td>Пароль</td>
+                <td><input type="password" name="pwd1" id="pwd1"></td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>Повторите пароль</td>
+                <td><input type="password" name="pwd2" id="pwd2"></td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td><input type="button" value="Зарегистрироваться" name="subm" id="subm"></td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+
+</div>
+
+<!-- BEGIN JIVOSITE CODE {literal} -->
+<script type='text/javascript'>
+(function(){
+ var widget_id = 'X4MiWDDDco';
+ var s = document.createElement('script');
+ s.type = 'text/javascript';
+ s.async = true;
+ s.src = '//code.jivosite.com/script/widget/'+widget_id;
+ var ss = document.getElementsByTagName('script')[0];
+ ss.parentNode.insertBefore(s, ss);})();
+</script>
+<!-- {/literal} END JIVOSITE CODE -->
+
+
+		
+ 	<script type="text/javascript">
+			$(document).ready(function(){
+			   $("#slider").easySlider({
+				  auto: true,
+				  continuous: true,
+					controlsShow: true,
+					speed: 700,
+					pause: 3000
+			   });
+			   $("#slider2").easySlider({
+				  auto: true,
+				  continuous: true,
+					controlsShow: true,
+					speed: 700,
+					pause: 3000
+			   });
+			   $("#slider3").easySlider({
+				  auto: true,
+				  continuous: true,
+					controlsShow: true,
+					speed: 700,
+					pause: 3000
+			   });
+			   $("#slider4").easySlider({
+				  auto: true,
+				  continuous: true,
+					controlsShow: true,
+					speed: 700,
+					pause: 3000
+			   });
+			});
+	</script>
+
+<!-- JampPanel-->
+<style>
+#JampPanel:hover{
+margin-right:-160px;
+}
+#JampPanel,#JampPanel .container{
+border-radius:10px;
+-webkit-border-radius:10px;
+-khtml-border-radius:10px;
+-moz-border-radius:10px;
+-o-border-radius:10px;
+border:1px solid #asd; ---#FE2323;
+background-color: #fff; ---lightblue; ---#F0F0F0;
+box-shadow: 0px 5px 5px #626262;
+-webkit-box-shadow:0px 5px 5px #626262;
+-khtml-box-shadow:0px 5px 5px #626262;
+-moz-box-shadow:0px 5px 5px #626262;
+}
+#JampPanel {opacity:0.95;
+position:fixed;z-index:1200;
+height:290px;top:200px;right:0;margin-right:-160px;
+---background:#F0F0F0 url(http://uploads.ru/i/S/z/t/Sztn3.png) 4px 2px no-repeat;
+   transition-duration: 0.33s;
+  -webkit-transition-duration: 0.33s;
+  -moz-transition-duration: 0.33s;
+  -o-transition-duration: 0.33s;
+width:230px;
+}
+#JampPanel .container{
+padding:12px;
+height:266px;
+width:100%;margin:0px 0 0 30px;
+}
+#JampPanel .container p a{
+font-family:Arial;
+font-weight:bold;
+font-size:16px;
+color: #d00;
+text-decoration:none;
+}
+#Zaslonyalka{ /*прикрывает область тени на стыке уха с container*/
+position:absolute;
+height:290px;width:14px;
+background-color: #fff; ---lightblue; ---#F0F0F0;
+margin:-12px 0 0 -18px;
+}
+</style>
+
+<div id=JampPanel>
+  <div class=container>
+    <div id=Zaslonyalka></div>
+		<p style="margin-left:-240px; position:relative; z-index:1500;"><a href="pred_kab2.html"><img src="cabinet.jpg" title="Кабинет" alt="Кабинет" width="13%" /></p>
+		<p style="margin-left:-240px; position:relative; z-index:1500;"><a href="m2.php"><img src="message.jpg" title="Сообщения" alt="Сообщения" width="13%" /></p>
+		<p style="margin-left:-240px; position:relative; z-index:1500;"><a href="help.html"><img src="help3.png" title="Помощь" alt="Помощь" width="13%" /></p>
+		<p style="margin-left:-240px; position:relative; z-index:1500;"><a href="#top"><img src="upbtn.png" title="Вверх" alt="Вверх" width="13%" /></p>
+  </div>
+</div>
+<!--End//JampPanel-->
+
+</body>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+$("#reg_min").live("click",function(){
+var a=document.getElementById("treb");
+var t=$("#reg_min").offset();
+   $("#treb").css("position","absolute");
+   $("#treb").css("left",t.left-600);
+   $("#treb").css("top",t.top-10);
+   var a=document.getElementById("treb");
+   a.style.display="block";
+});
+
+$("#subm").live("click",function(){
+ $.ajax({   
+                    type: "POST",   
+                    url: "answer.php",   
+                    data: "user_name="+$("#user_name").val()+"&pwd1="+$("#pwd1").val()+"&pwd2="+$("#pwd2").val(), 
+                    data_type:"text",  
+                    success: function(text){   
+alert(text);
+                    }   
+                });   
+});
+$("#close_treb").click(function(){
+    var a=document.getElementById("treb");
+    a.style.display="none";
+})
+});
+
+</script>
+
+<!-- autocomplete -->
+	<script type="text/javascript" src="aca/scripts/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="aca/scripts/jquery.mockjax.js"></script>
+    <script type="text/javascript" src="aca/src/jquery.autocomplete.js"></script>
+    <script type="text/javascript" src="aca/scripts/goods.js"></script>
+    <script type="text/javascript" src="aca/scripts/demo.js"></script>
+<!-- end autocomplete -->
+	
+</html>

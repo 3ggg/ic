@@ -1,0 +1,27 @@
+﻿  				<SCRIPT language="javascript" type="text/javascript">
+					<!--
+					function toggle(id){
+					 var d=document.getElementById(id);
+
+					 if (d.style.display == 'block'){d.style.display='none';}
+					 else{d.style.display='block';}
+
+					return false;
+					}
+					//-->
+				</SCRIPT>
+
+<div id="descr1" style="width:400px; height:270px; border:1px #d1d1d1 solid; font-family:Arial; font-size:14px; font-weight:normal; background:#07B8E4;">
+<center style="margin:10px;">
+<!-- 	<input type="textarea" style="width:200px; height:100px; text-vertical-align:top;" />
+ -->
+  <form action="#" method="post">
+    <p>Введите описание товара:</p>
+    <p><textarea rows="10" cols="45" name="text"></textarea></p>
+<!--     <p><input type="submit" value="ОК"></p>
+ -->  <!-- <br /> <br /> -->
+	<input type="Submit" style="width:auto;" value="OK" onclick="toggle(top.document.getElementById('descr'));" />
+	<input type="Reset" style="width:auto;" value="Отмена" onclick="toggle(top.document.getElementById('descr'));" />
+  </form>
+</center>
+</div>
